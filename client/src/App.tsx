@@ -38,7 +38,7 @@ function Router() {
         <Route path="/causal-forest" component={CausalForest} />
         <Route path="/pca-voting" component={PCAVoting} />
 
-        {/* Fallback to 404 */}
+        {/* 404 fallback */}
         <Route component={NotFound} />
       </Switch>
     </Layout>
