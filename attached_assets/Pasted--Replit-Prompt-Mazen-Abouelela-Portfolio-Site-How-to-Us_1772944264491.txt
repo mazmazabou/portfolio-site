@@ -1,0 +1,384 @@
+# Replit Prompt — Mazen Abouelela Portfolio Site
+
+## How to Use This
+
+### Strategy for Free Tier (READ FIRST)
+
+Your free tier credits are limited. Here's the plan to get maximum value:
+
+1. **Start in Design Mode** — Go to replit.com → click "Create" → toggle to **Design** (top-left)
+2. **Paste the DESIGN MODE PROMPT below** — This builds the full multi-page visual site
+3. **Review the output** — Make small tweaks via follow-up messages (costs fewer credits than a fresh build)
+4. **Convert to App Mode** — Click "Design" button → "Convert to App" when you're happy with the look
+5. **Use the APP MODE FOLLOW-UP PROMPT** — This adds routing, PDF viewers, and functionality
+
+### Why This Two-Step Approach?
+- Design Mode is 3-5x cheaper on credits than App Mode
+- You get the hardest part (visual design) right first
+- Converting preserves all your design work
+- App Mode follow-ups for functionality are smaller, cheaper operations
+
+### Credit-Saving Tips
+- **Don't interrupt the agent mid-build** — let it finish before giving feedback
+- **Batch your feedback** — say "fix these 3 things" not 3 separate messages
+- **Be specific** — "make the hero text 48px and left-aligned" burns fewer credits than "make it look better"
+- **Use Economy Mode** if available in your settings
+
+---
+
+## PHASE 1: DESIGN MODE PROMPT
+
+Copy everything below this line and paste it into Replit Design Mode:
+
+---
+
+Build a multi-page portfolio website for Mazen Abouelela, a USC student (Fall 2022 – Spring 2026) who builds products, analyzes markets, and writes about both. The site has 10 routes. It should feel like a product designer's portfolio — clean, editorial, confident — not a generic template.
+
+### Global Design System
+
+- **Color palette**: Dark navy background (#0A0F1C), white text (#F5F5F5), gold/amber accent (#D4A853), teal secondary (#2DD4BF), muted slate for secondary text (#94A3B8)
+- **Typography**: Use a serif font (like Georgia or a Google Font like "Cormorant Garamond") for headings, a clean sans-serif (Inter or system-ui) for body, and a monospace font (JetBrains Mono or Fira Code) for code/data
+- **Layout**: Max content width 1100px, generous whitespace, no clutter. Subtle section dividers. Cards with slight border or subtle glass-morphism effect.
+- **Navigation**: Sticky top nav with: "Home" | "Projects" (dropdown → RideOps, MENA Rising) | "Coursework" (dropdown → Fama-French, ECON 500, Al-Ard, Microsoft Tax, DSCI 351, MENA Slides) | "Personal" (→ Valentine). Right side: small GitHub and LinkedIn icon links.
+- **Responsive**: Must work on mobile. Nav collapses to hamburger menu.
+- **Interactions**: Subtle hover effects on cards (slight lift/glow). Smooth page transitions. No aggressive animations.
+
+### Page 1: Landing Page (/)
+
+**Hero Section:**
+- Large name: "MAZEN ABOUELELA" in serif display font
+- Tagline below: "I build products, analyze markets, and write about both."
+- Subtext: "USC · Fall 2022 – Spring 2026 · 9 pieces · 5 formats · 2 live products · zero filler"
+- Two CTA buttons: [See RideOps →] (gold/amber, primary) and [View Full Portfolio ↓] (outline/secondary)
+
+**Products Section (labeled "Live Products"):**
+Two large hero cards side by side:
+
+Card 1 — RideOps:
+- Tags: [SaaS] [Full-Stack] [Product] [PostgreSQL] [React] [Multi-Tenant]
+- Title: "RideOps — Campus Transportation Ops Platform"
+- Subtitle: "A white-labeled, multi-tenant SaaS platform for university accessibility transportation. Live in production with 4 campuses demo-ready."
+- Key stats strip: "29 analytics widgets · 21 notification types · 4 campuses · 6-state ride lifecycle"
+- Badge: "LIVE PRODUCT" in gold
+- Links to /ride-ops
+
+Card 2 — MENA Rising:
+- Tags: [React] [TypeScript] [Python Pipeline] [AI/LLM] [MENA] [Data Viz]
+- Title: "MENA Rising — Weekly Economic Intelligence"
+- Subtitle: "A Claude-powered MENA economic briefing app with an Ottoman design system. Live with automated weekly pipeline."
+- Badge: "LIVE PRODUCT" in gold
+- Links to /mena-rising
+
+**Coursework Section (labeled "Selected Coursework"):**
+A 3-column grid (2-col on tablet, 1-col on mobile) of 6 smaller cards:
+
+1. Fama-French Factor Analysis — ECON 577
+   Tags: [Python] [Econometrics] [Finance] [Jupyter]
+   Format badge: "Jupyter Notebook"
+   One-liner: "Three-factor model, full data pipeline, and the interpretation that actually matters."
+
+2. ECON 500 Final Exam — Graduate Econometrics
+   Tags: [Econometrics] [LaTeX] [IV] [DiD] [Graduate-Level]
+   Format badge: "LaTeX PDF · 17 pages"
+   One-liner: "Seven questions covering the full causal inference toolkit."
+
+3. Al-Ard — Film Review (MDES 401)
+   Tags: [Cultural Criticism] [Film Studies] [MENA]
+   Format badge: "Long-form Essay · 8 pages"
+   One-liner: "Close reading of Chahine's 1969 Egyptian film."
+
+4. Microsoft Ireland Tax Memo — WRIT 340
+   Tags: [Business Writing] [Tax Policy] [Financial Analysis]
+   Format badge: "Business Memo"
+   One-liner: "$858M in Microsoft tax savings — calculated from real S&P Capital IQ data."
+
+5. Dual-Database Inventory System — DSCI 351
+   Tags: [MongoDB] [Redis] [Python] [Systems Design]
+   Format badge: "Technical Report · 12 pages"
+   One-liner: "Redis + MongoDB dual-database architecture with aggregate pipelines and GUI."
+   Co-author note: "with Dev Kapashi"
+
+6. Growth Challenges in MENA — ECON 305
+   Tags: [MENA] [Development Economics] [Policy]
+   Format badge: "Presentation · 18 slides"
+   One-liner: "Structural growth barriers across the MENA region."
+   Co-author note: "with Dev Kapashi"
+
+**MENA Throughline Section:**
+A subtle callout/banner between coursework and personal:
+"Three pieces in this portfolio engage the MENA region from different angles — economic intelligence (MENA Rising), development policy (ECON 305), and cultural criticism (Al-Ard). This is a sustained, multi-year intellectual thread, not a coincidence."
+
+**Personal Section:**
+Small, warm card for the Valentine project:
+- Title: "Valentine — A Personal Project"
+- Text: "Not everything I build is for a course, a client, or a job application."
+- Tags: [Personal Project] [Built for Love]
+- Small CTA: [Open Project →]
+
+**Footer:**
+- Contact info / email
+- Resume download link (placeholder for now)
+- GitHub icon link
+- LinkedIn icon link
+- Small text: "Built by Mazen Abouelela · USC 2026"
+
+---
+
+### Page 2: RideOps (/ride-ops)
+
+This page should feel like a PRODUCT PAGE, not a portfolio entry. Lead with the problem story.
+
+**Hero:** Page title "RideOps" with subtitle "Campus Transportation Ops Platform". A "LIVE PRODUCT" badge. Two buttons: [Visit ride-ops.com →] and [Open App Demo →].
+
+**Stats strip:** 29 analytics widgets · 21 notification types · 4 campuses · 650+ seeded rides · 6-state ride lifecycle
+
+**Three role cards in a row:** Admin (full command center: ride board, analytics dashboard, scheduling, fleet management) | Driver (mobile interface: clock in, pickup lifecycle, grace timer) | Rider (book in three taps)
+
+**Story section — use this exact copy:**
+
+USC's DART program — Disabled Access to Road Transportation — moves students with disabilities across campus by golf cart. When I joined as a student supervisor, the entire operation ran on Gmail and Google Calendar. Cancellations were deleted events. No-shows were strikethroughs nobody tracked. Drivers didn't know their schedules until the last minute. Managers couldn't answer basic questions without counting by hand.
+
+The problem wasn't the people. It was the tools.
+
+I built RideOps to fix that. It's a white-labeled, multi-tenant SaaS platform purpose-built for university accessibility transportation programs. Three separate interfaces — dispatcher, driver, rider — share a single PostgreSQL backend and stay in sync in real time.
+
+The dispatcher gets a full command center: a real-time ride board, a 29-widget drag-and-drop analytics dashboard, shift scheduling, fleet management, and Excel report exports. The driver gets a focused mobile interface: clock in, see your rides, run the pickup lifecycle, and let the grace timer handle no-shows automatically. The rider books in three taps.
+
+Every university gets its own branded experience — colors, logos, program name — via tenant config, not forked codebases. USC DART, UCLA BruinAccess, Stanford ATS, and UCI AnteaterExpress each look native to their campus. The multi-tenant architecture means I add a new school by adding a config entry, not a new deployment.
+
+I showed a prototype to the USC Transportation General Manager in December 2025. He gave me a feature roadmap and told me schools at his conference network need this. UCLA, Stanford, and UCI have standing demo offers.
+
+**Technical section:** Built for university IT: FERPA-compliant data handling, bcrypt session auth, RBAC, parameterized SQL, SECURITY.md for IT evaluators, and a full DPA framework.
+
+**Attribution:** Sole founder and developer — 100% of design, architecture, and code.
+
+---
+
+### Page 3: MENA Rising (/mena-rising)
+
+This page foregrounds regional expertise, not just technical stack.
+
+**Hero:** "MENA Rising" title, "Weekly Economic Intelligence" subtitle. A prominent [Visit mena-rising.com →] button. Use a placeholder hero image area (labeled "Full-page screenshot of the app at 1440px — to be added").
+
+**Story section — use this exact copy:**
+
+Most MENA economic coverage is either paywalled institutional research or surface-level news aggregation. Neither is particularly useful if you want a fast weekly read on macro signals, trade flows, and labor trends across nine countries simultaneously.
+
+MENA Rising is my attempt to build what I actually wanted to read.
+
+Every week, a Python pipeline wakes up via GitHub Actions, pulls raw data from the World Bank, FRED, Finnhub, News API, and GDELT, and sends it to Claude's API to generate a structured briefing JSON. That JSON feeds a React app with a newspaper/editorial aesthetic — scrolling ticker masthead, macro pulse cards with animated sparklines, trade and capital flow visualizations, labor signal panels (youth unemployment, AI adoption, tech job growth), and a risk radar with severity levels across all nine countries.
+
+The design is deliberate. The visual language draws on Ottoman and Islamic geometric traditions — zellige tile patterns, muqarnas strip ornaments, decorative dividers — implemented as CSS classes alongside three font families: Cormorant Garamond for display headings, Crimson Pro for editorial body text, and JetBrains Mono for data. Dark theme with navy, gold/amber, and teal. The goal was a publication that felt like it belonged to the region it covers.
+
+Subscribers receive a formatted HTML email after each pipeline run via a Resend-powered endpoint on Vercel.
+
+**Architecture diagram area:** Show a simple horizontal flow: Data Sources (World Bank, FRED, Finnhub, News API, GDELT) → Python Pipeline → Claude API → Briefing JSON → React App → Resend Newsletter
+
+**Tech stack as tag badges:** Vite · React 18 · TypeScript · Tailwind CSS · shadcn/ui · Python · Claude API · GitHub Actions · Resend · Vercel
+
+**Countries covered:** Saudi Arabia · UAE · Egypt · Qatar · Morocco · Jordan · Bahrain · Oman · Turkey
+
+**Attribution:** Sole developer and designer — 100%.
+
+---
+
+### Page 4: Fama-French (/fama-french)
+
+**Title:** "Fama-French Factor Analysis" with course label "ECON 577 — Financial Econometrics, USC"
+**Format badge:** Jupyter Notebook · Python
+**Tags:** [Python] [Econometrics] [Finance] [Jupyter] [OLS] [Factor Models]
+
+**Copy:**
+The Fama-French three-factor model is one of the foundational frameworks in empirical asset pricing. This notebook implements it end-to-end: raw data ingestion, factor construction (market excess return, SMB, HML), OLS regression across a portfolio of equities, and interpretation of the results.
+
+The part that matters most isn't the code — it's what comes after. Each regression output is accompanied by written cells explaining what the alpha means (is there unexplained return after controlling for systematic risk?), why the factor loadings matter (is this portfolio tilted toward small-caps or value stocks?), and what the robustness checks are testing. The notebook is organized to be read as an argument, not just executed as a script.
+
+Built in Python using pandas, statsmodels, and matplotlib. Data pipeline runs from source to analysis without manual steps.
+
+**Below the copy:** Show 3-4 placeholder code block areas styled with dark background and monospace font, labeled: "Code Cell 1: Data Loading", "Code Cell 2: Factor Construction", "Code Cell 3: OLS Regression", "Code Cell 4: Interpretation". These will be filled later with actual notebook cells.
+
+**Download section:** Two buttons: [Download .ipynb] and [Download PDF Export] (placeholder links).
+
+**Attribution:** Individual — 100%.
+
+---
+
+### Page 5: ECON 500 (/econ-500)
+
+**Title:** "ECON 500 — Graduate Econometrics Final Exam"
+**Format badge:** LaTeX PDF · 17 pages
+**Tags:** [Econometrics] [LaTeX] [IV] [DiD] [Panel Data] [MLE] [Graduate-Level]
+
+**Copy:**
+Seven questions. Seventeen pages of LaTeX. Graduate econometrics.
+
+This exam covers the full causal inference toolkit — OLS identification assumptions, instrumental variables, difference-in-differences, panel data with fixed effects, regression discontinuity design, and maximum likelihood estimation. All seven questions are answered in full, with derivations typeset cleanly in LaTeX throughout.
+
+The sections that go beyond mechanics are the most interesting. The IV and DiD questions require stating and defending the identifying assumptions, not just applying a formula. The econometrics are a means to an end — the end is an argument about causality.
+
+**Below:** Large placeholder area labeled "PDF Viewer — to be embedded after conversion to App Mode". A [Download PDF] button (placeholder).
+
+**Attribution:** Individual — 100%.
+
+---
+
+### Page 6: Al-Ard (/al-ard)
+
+**Design note:** This page should be quieter than the product pages. Less chrome, more white space. The text does the work.
+
+**Title:** "Al-Ard — A Reading of Youssef Chahine's Film"
+**Course:** MDES 401 — Media Studies, USC
+**Format badge:** Long-form Essay · 8 pages
+**Tags:** [Cultural Criticism] [Film Studies] [Postcolonial Theory] [MENA]
+
+**Copy:**
+Al-Ard — The Earth — is a 1969 Egyptian film by Youssef Chahine. It's set against Nasser's agrarian reform policies and follows a village community fighting to hold on to its land. The film uses landscape as a political argument: soil, fields, and geography aren't backdrop — they're the subject.
+
+This essay is a close reading of the film. It moves between micro-textual analysis — specific scenes, framing choices, editing rhythm — and a broader argument about postcolonial cinema's relationship to place. The central claim is that Chahine uses landscape to figure collective dispossession: the land that is taken is not just agricultural, it is identity, inheritance, and sovereignty simultaneously.
+
+Writing this required a different kind of attention than econometrics or systems design. The evidence isn't data — it's a held shot, a cut, the weight of silence before a line of dialogue. Getting that kind of argument to hold together on the page is its own technical challenge.
+
+**MENA cross-reference note (subtle, smaller text):** "This piece shares a regional thread with MENA Rising (economic intelligence) and the ECON 305 slides (development policy) — the same region, engaged from a humanistic rather than quantitative angle."
+
+**Below:** PDF viewer placeholder + [Download PDF] button.
+
+**Attribution:** Individual — 100%.
+
+---
+
+### Page 7: Microsoft Tax (/microsoft-tax)
+
+**Title:** "Microsoft Ireland Tax Analysis"
+**Course:** WRIT 340 — Professional Writing, USC
+**Format badge:** Business Memo
+**Tags:** [Business Writing] [Tax Policy] [Financial Analysis] [Memo Format]
+
+**Callout stat (large, gold accent):** "$858M" with subtext "Estimated single-year tax savings from one jurisdiction"
+
+**Copy:**
+This is a professional business memo analyzing Microsoft's use of Ireland as a tax-efficient jurisdiction — written from the perspective of a financial analyst briefing an executive on the strategic implications.
+
+The core finding: Microsoft's Irish subsidiary accounts for 33% of the company's global revenue but only 4% of its global net income. That disparity is structural, not incidental. Using Microsoft's actual 2023 financials from S&P Capital IQ, the memo calculates that Microsoft paid $652 million in Irish taxes versus the $1.51 billion it would have owed at the U.S. rate of 29% — a saving of approximately $858 million from a single jurisdiction in a single year.
+
+The memo also analyzes Section 7874 of the Internal Revenue Code — the main U.S. legislative mechanism against corporate inversions — and explains why it has not prevented Microsoft and others from maintaining these structures.
+
+**Below:** PDF viewer placeholder + [Download PDF] button.
+
+**Attribution:** Individual — 100%.
+
+---
+
+### Page 8: DSCI 351 (/dsci-351)
+
+**Title:** "Dual-Database Inventory Management System"
+**Course:** DSCI 351 — Data Systems, USC
+**Format badge:** Technical Report · 12 pages
+**Tags:** [MongoDB] [Redis] [Python] [Systems Design] [Technical Writing] [CRUD] [GUI]
+
+**Copy:**
+A trader buys products from suppliers and sells them to retailers. The entire lifecycle — purchase, inventory, order, fulfillment — needs to be tracked in one place. This system does that, using two databases chosen for different access patterns: Redis for the buy-side (fast key-value reads on products and supplier data) and MongoDB for the sell-side (flexible document storage for orders, inventory, and retailer records).
+
+The report documents the full build: ER diagram with five entity relationships, five Python backend modules, three complex MongoDB aggregate pipeline queries, and a Tkinter GUI with CRUD operations across all entities.
+
+My contributions were the top-down architecture design, the justification for the Redis/MongoDB split, and all of the NoSQL query work — including three multi-stage aggregate pipelines for cross-entity queries that the flat Redis key-value structure couldn't handle directly.
+
+**Below:** PDF viewer placeholder + [Download PDF] button.
+
+**Attribution:** Co-authored with Dev Kapashi. Mazen's contributions: architecture planning, database design decisions, all NoSQL query work.
+
+---
+
+### Page 9: MENA Slides (/mena-slides)
+
+**Title:** "Growth Challenges in MENA"
+**Course:** ECON 305 — Development Economics, USC
+**Format badge:** Presentation · 18 slides
+**Tags:** [MENA] [Development Economics] [Policy] [Data Visualization] [Presentation]
+
+**Copy:**
+Academic context for MENA Rising. The same region, approached from a development economics angle rather than a data journalism one.
+
+This 18-slide policy deck — co-authored with Dev Kapashi — diagnoses four interlocking structural barriers to growth across the MENA region: weak institutional quality, overreliance on oil revenue, a youth unemployment crisis, and persistent gender gaps in labor force participation. The analysis draws on World Bank and IMF data throughout, and the policy recommendations are sequenced deliberately — institutional reform precedes liberalization in the proposed framework.
+
+The work here connects directly to MENA Rising: the same regional expertise, formalized into academic argument.
+
+**Below:** A placeholder gallery grid (3 columns, 2 rows) labeled "Selected Slides — co-authored with Dev Kapashi" with 5-7 placeholder image areas. Text below: "Screenshots only — reflects partial contribution scope."
+
+**Attribution:** Co-authored with Dev Kapashi — joint project.
+
+---
+
+### Page 10: Valentine (/valentine)
+
+**Design note:** This page is intentionally minimal and warm. Different tone from the rest.
+
+**Title:** "Valentine — A Personal Project"
+
+**Copy:**
+Not everything I build is for a course, a client, or a job application.
+
+This one was for my girlfriend. The technical skills are the same ones I use everywhere else in this portfolio — the difference is the reason. It's here because a portfolio that only contains serious work tells you less about a person than one that shows what they build when nobody's grading them.
+
+**Single large CTA button:** [Open Project →] (placeholder link, gold/amber accent)
+
+No spec table. No stats strip. Keep it light.
+
+---
+
+IMPORTANT NOTES FOR THE BUILDER:
+- This is a DESIGN first — placeholders for PDF viewers and downloads are fine. Functionality gets added after converting to App Mode.
+- All external links (ride-ops.com, mena-rising.com, app.ride-ops.com) should open in new tabs.
+- Make the site feel polished and editorial — not like a Bootstrap template.
+- Use the dark navy + gold + teal color scheme consistently.
+- Serif headings, sans-serif body, monospace for code/data.
+- Every page should have a "← Back to Portfolio" link or the nav should always be visible.
+
+---
+
+## PHASE 2: APP MODE FOLLOW-UP PROMPT
+
+After converting to App Mode, paste this follow-up to add functionality:
+
+---
+
+Now that the design is converted to App Mode, add the following functionality:
+
+1. **Routing**: Make sure all 10 pages work as separate routes using React Router: /, /ride-ops, /mena-rising, /fama-french, /econ-500, /al-ard, /microsoft-tax, /dsci-351, /mena-slides, /valentine
+
+2. **PDF Viewer**: On the pages for ECON 500, Al-Ard, Microsoft Tax, and DSCI 351, replace the PDF viewer placeholders with an actual inline PDF viewer component. Use an <iframe> or <embed> element that accepts a PDF URL. For now, use placeholder URLs — I'll upload the actual PDFs later. Include a download button next to each viewer.
+
+3. **External links**: Make sure all CTAs that link to external sites (ride-ops.com, app.ride-ops.com, mena-rising.com) open in new tabs with target="_blank" rel="noopener noreferrer".
+
+4. **Smooth scrolling**: On the landing page, the "View Full Portfolio ↓" button should smooth-scroll down to the Products section.
+
+5. **Navigation dropdown**: Make sure the Projects and Coursework nav dropdowns work correctly on both desktop and mobile.
+
+6. **Mobile responsive**: Verify the hamburger menu works, cards stack vertically on mobile, and all text is readable on small screens.
+
+7. **Code blocks on Fama-French page**: Style the placeholder code block areas with a dark background (#1E293B), monospace font, and syntax-highlighting-style colors (green for strings, blue for keywords, white for code). These will hold static code snippets I'll paste in later.
+
+Do not change the visual design — only add the functionality listed above.
+
+---
+
+## PHASE 3: POLISH PROMPTS (use one at a time, as needed)
+
+These are small follow-ups for after Phases 1 and 2. Use sparingly — each one costs credits.
+
+**If the nav looks off:**
+"Fix the navigation: make sure the dropdown menus for Projects and Coursework close when I click outside them. On mobile, the hamburger menu should have a smooth slide-in animation and close when a link is tapped."
+
+**If cards look generic:**
+"Make the project cards more distinctive: add a subtle gradient border on hover (dark navy to gold), increase the card padding, and make the tag badges smaller with rounded pills in a muted color. The LIVE PRODUCT badge should pulse subtly with a gold glow."
+
+**If typography feels flat:**
+"Improve the typography hierarchy: page titles should be 48px serif on desktop (32px mobile), section headers 28px (22px mobile), body text 17px with 1.65 line height. Add more spacing between sections — at least 80px between major sections on desktop."
+
+**If you need to add real PDF files later:**
+"I'm uploading [filename].pdf. Embed it in the PDF viewer on the [page-name] page. Keep the download button working with this file too."
+
+**If you need to add the Fama-French code cells:**
+"Here are the 4 code cells for the Fama-French page. Replace the placeholder code blocks with these. Keep the dark background styling and add line numbers on the left side: [paste code cells]"
+
+**If you need to add MENA slides screenshots:**
+"I'm uploading 6 slide screenshots for the MENA Slides page. Display them in a responsive grid gallery (3 columns desktop, 2 tablet, 1 mobile) with the caption 'Selected slides — co-authored with Dev Kapashi' below the gallery."
