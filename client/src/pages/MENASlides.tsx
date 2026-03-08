@@ -41,15 +41,16 @@ export default function MENASlides() {
           </p>
         </div>
 
-        {/* Slides Gallery Placeholder */}
+        {/* Slides Gallery */}
         <div className="space-y-4 mb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="aspect-[16/9] bg-[#1E293B] border border-border flex items-center justify-center relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent to-white/5"></div>
-                <MonitorPlay className="text-white/10 group-hover:text-white/20 transition-colors w-12 h-12" />
-                <div className="absolute bottom-2 left-2 text-[10px] font-mono text-muted-foreground/50">Slide Placeholder {i}</div>
-              </div>
+            {[1, 2, 3, 4, 5, 6, 7].map((i) => (
+              <img
+                key={i}
+                src={`/images/slides/slide-${i}.png`}
+                alt={`MENA Growth Challenges — Slide ${i}`}
+                className="aspect-[16/9] w-full object-cover rounded border border-white/10"
+              />
             ))}
           </div>
           <p className="text-xs font-mono text-muted-foreground text-center uppercase tracking-wider">

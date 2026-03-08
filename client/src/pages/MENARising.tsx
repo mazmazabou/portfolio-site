@@ -18,20 +18,19 @@ export default function MENARising() {
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-editorial italic">Weekly Economic Intelligence</p>
         
         <div className="mb-12">
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a href="https://mena-rising.com" target="_blank" rel="noopener noreferrer">
             <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90 h-12 px-8 rounded-none text-base">
               Visit mena-rising.com <ExternalLink className="ml-2 h-4 w-4" />
             </Button>
           </a>
         </div>
 
-        {/* Hero Image Placeholder */}
-        <div className="w-full aspect-[16/9] bg-[#1E293B] border border-border flex items-center justify-center mb-16 relative overflow-hidden pattern-zellige">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0F1C]"></div>
-          <span className="text-muted-foreground font-mono text-sm z-10 bg-[#0A0F1C]/80 px-4 py-2 border border-border">
-            Full-page screenshot of the app at 1440px — to be added
-          </span>
-        </div>
+        {/* Hero Image */}
+        <img
+          src="/images/mena-rising-hero.png"
+          alt="MENA Rising — full-page screenshot at 1440px"
+          className="w-full rounded-lg border border-white/10 shadow-2xl mb-16"
+        />
       </section>
 
       {/* Story */}

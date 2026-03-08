@@ -44,18 +44,15 @@ export default function Econ500() {
           </p>
         </div>
 
-        {/* PDF Viewer Placeholder */}
-        <div className="bg-[#1E293B]/50 border border-border rounded-lg aspect-[1/1.2] md:aspect-[16/9] flex flex-col items-center justify-center mb-8 relative">
-          {/* This will be replaced with an actual iframe/embed in App Mode */}
-          <FileText size={48} className="text-muted-foreground/30 mb-4" />
-          <span className="text-muted-foreground font-mono text-sm text-center px-4">
-            PDF Viewer — to be embedded after conversion to App Mode
-          </span>
-          <div className="mt-6">
+        {/* PDF Viewer */}
+        <iframe src="/pdfs/econ-500-final.pdf" className="w-full h-[80vh] rounded-lg border border-white/10 mb-8" title="ECON 500 Final Exam PDF" />
+
+        <div className="mb-8">
+          <a href="/pdfs/econ-500-final.pdf" download>
             <Button variant="default" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              <Download className="mr-2 h-4 w-4" /> Download PDF (Placeholder)
+              <Download className="mr-2 h-4 w-4" /> Download PDF
             </Button>
-          </div>
+          </a>
         </div>
 
         <div className="text-sm text-muted-foreground">

@@ -24,12 +24,12 @@ export default function RideOps() {
         <p className="text-xl md:text-2xl text-muted-foreground mb-8">Campus Transportation Ops Platform</p>
         
         <div className="flex flex-col sm:flex-row gap-4 mb-12">
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a href="https://ride-ops.com" target="_blank" rel="noopener noreferrer">
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-6 rounded-none w-full sm:w-auto text-base">
               Visit ride-ops.com <ExternalLink className="ml-2 h-4 w-4" />
             </Button>
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a href="https://app.ride-ops.com" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" className="border-border hover:bg-white/5 h-12 px-6 rounded-none w-full sm:w-auto text-base">
               Open App Demo <PlaySquare className="ml-2 h-4 w-4" />
             </Button>

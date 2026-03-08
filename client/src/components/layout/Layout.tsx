@@ -92,7 +92,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="w-px h-4 bg-border ml-2 mr-2"></div>
             
             <div className="flex items-center gap-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/mazmazabou" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                 <Github size={18} />
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
@@ -139,7 +139,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link href="/valentine" className="text-lg font-medium">Personal</Link>
               
               <div className="flex gap-6 mt-4 pt-4 border-t border-white/10">
-                <a href="#" className="text-foreground"><Github size={24} /></a>
+                <a href="https://github.com/mazmazabou" className="text-foreground" target="_blank" rel="noopener noreferrer"><Github size={24} /></a>
                 <a href="#" className="text-foreground"><Linkedin size={24} /></a>
               </div>
             </nav>
@@ -168,7 +168,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               Resume
             </a>
             <div className="flex gap-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://github.com/mazmazabou" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                 <Github size={18} />
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
