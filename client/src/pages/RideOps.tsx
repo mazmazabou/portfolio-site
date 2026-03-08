@@ -47,30 +47,41 @@ export default function RideOps() {
           </div>
         </div>
 
-        {/* Hero Screenshots */}
-        <div className="grid md:grid-cols-2 gap-4 mb-6">
-          <img src="/images/rideops/usc-office-dispatch.png" alt="RideOps Dispatch Board" className="w-full rounded-lg border border-white/10 shadow-xl" />
-          <img src="/images/rideops/usc-office-analytics-dashboard.png" alt="RideOps Analytics Dashboard" className="w-full rounded-lg border border-white/10 shadow-xl" />
-        </div>
+        {/* Dispatch Board — Hero */}
+        <img src="/images/rideops/usc-office-dispatch.png" alt="RideOps Dispatch Board" className="w-full rounded-lg border border-white/10 shadow-xl mb-4" />
 
-        {/* Screenshot Gallery */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-12">
+        {/* Analytics Dashboard — Hero */}
+        <img src="/images/rideops/usc-office-analytics-dashboard.png" alt="RideOps Analytics Dashboard" className="w-full rounded-lg border border-white/10 shadow-xl mb-8" />
+
+        {/* Admin Features */}
+        <h3 className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-3">Admin Features</h3>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">
           {[
-            { src: 'usc-office-ride-drawer.png', alt: 'Ride Detail Drawer' },
             { src: 'usc-office-staff-calendar.png', alt: 'Staff Calendar' },
-            { src: 'usc-office-fleet-drawer.png', alt: 'Fleet Management' },
             { src: 'usc-office-rides-filtered.png', alt: 'Filtered Rides' },
+            { src: 'usc-office-ride-drawer.png', alt: 'Ride Detail Drawer' },
+            { src: 'usc-office-fleet-drawer.png', alt: 'Fleet Management' },
             { src: 'usc-office-analytics-hotspots.png', alt: 'Analytics Hotspots' },
             { src: 'usc-office-analytics-milestones.png', alt: 'Analytics Milestones' },
-            { src: 'usc-driver-home.png', alt: 'Driver Home' },
-            { src: 'usc-rider-booking-where.png', alt: 'Rider Booking' },
-            { src: 'ucla-office-dispatch.png', alt: 'UCLA Dispatch (Multi-Tenant)' },
-            { src: 'stanford-office-analytics-dashboard.png', alt: 'Stanford Analytics (Multi-Tenant)' },
-            { src: 'uci-office-dispatch.png', alt: 'UCI Dispatch (Multi-Tenant)' },
-            { src: 'usc-rider-myrides.png', alt: 'Rider My Rides' },
           ].map(({ src, alt }) => (
-            <img key={src} src={`/images/rideops/${src}`} alt={alt} className="w-full rounded border border-white/10 hover:border-primary/30 transition-colors cursor-pointer" />
+            <img key={src} src={`/images/rideops/${src}`} alt={alt} className="w-full rounded-lg border border-white/10" />
           ))}
+        </div>
+
+        {/* Driver & Rider Mobile Views */}
+        <h3 className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-3">Driver & Rider Apps</h3>
+        <div className="flex gap-4 justify-center mb-8">
+          <img src="/images/rideops/usc-driver-home.png" alt="Driver Home" className="w-48 rounded-lg border border-white/10 shadow-lg" />
+          <img src="/images/rideops/usc-rider-booking-where.png" alt="Rider Booking" className="w-48 rounded-lg border border-white/10 shadow-lg" />
+          <img src="/images/rideops/usc-rider-myrides.png" alt="Rider My Rides" className="w-48 rounded-lg border border-white/10 shadow-lg hidden sm:block" />
+        </div>
+
+        {/* Multi-Tenant */}
+        <h3 className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-3">Multi-Tenant — Same Platform, Campus Branding</h3>
+        <div className="grid grid-cols-3 gap-3 mb-12">
+          <img src="/images/rideops/ucla-office-dispatch.png" alt="UCLA BruinAccess" className="w-full rounded-lg border border-white/10" />
+          <img src="/images/rideops/stanford-office-analytics-dashboard.png" alt="Stanford ATS" className="w-full rounded-lg border border-white/10" />
+          <img src="/images/rideops/uci-office-dispatch.png" alt="UCI AnteaterExpress" className="w-full rounded-lg border border-white/10" />
         </div>
 
         {/* Stats Strip */}

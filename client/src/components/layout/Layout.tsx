@@ -87,7 +87,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             >
               <button
                 onClick={() => toggleDropdown('coursework')}
-                className={`flex items-center gap-1 text-sm hover:text-primary transition-colors ${(location === '/fama-french' || location === '/al-ard' || location === '/microsoft-tax' || location === '/dsci-351' || location === '/mena-slides') ? 'text-primary' : 'text-foreground'}`}
+                className={`flex items-center gap-1 text-sm hover:text-primary transition-colors ${(location === '/fama-french' || location === '/al-ard' || location === '/microsoft-tax' || location === '/dsci-351' || location === '/mena-slides' || location === '/causal-forest' || location === '/pca-voting') ? 'text-primary' : 'text-foreground'}`}
               >
                 Coursework <ChevronDown size={14} className={`opacity-50 transition-transform ${openDropdown === 'coursework' ? 'rotate-180' : ''}`} />
               </button>
@@ -108,6 +108,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   </Link>
                   <Link href="/mena-slides" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
                     MENA Slides
+                  </Link>
+                  <Link href="/causal-forest" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
+                    Causal Forest
+                  </Link>
+                  <Link href="/pca-voting" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
+                    PCA & Classification
                   </Link>
                 </div>
               )}
@@ -156,6 +162,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <Link href="/microsoft-tax" className="text-lg">Microsoft Tax</Link>
                   <Link href="/dsci-351" className="text-lg">DSCI 351</Link>
                   <Link href="/mena-slides" className="text-lg">MENA Slides</Link>
+                  <Link href="/causal-forest" className="text-lg">Causal Forest</Link>
+                  <Link href="/pca-voting" className="text-lg">PCA & Classification</Link>
                 </div>
               </div>
 
@@ -182,9 +190,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             Built by Mazen Abouelela · USC 2026
           </div>
           <div className="flex items-center gap-6">
-            <a href="mailto:placeholder@example.com" className="text-sm hover:text-primary transition-colors">
-              Email
-            </a>
+            <span className="text-sm text-muted-foreground">abouelelamazen@gmail.com</span>
             <a href="/pdfs/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-primary transition-colors">
               Resume
             </a>

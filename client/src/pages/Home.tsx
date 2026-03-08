@@ -15,12 +15,12 @@ export default function Home() {
           MAZEN ABOUELELA
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-4 font-light max-w-2xl leading-relaxed">
-          I build products, analyze markets, and write about both.
+          I find problems worth solving and build everything it takes to prove the solution.
         </p>
         <p className="text-sm md:text-base font-mono text-primary/80 mb-12 flex flex-wrap gap-2 items-center">
           <span>USC · Fall 2022 – Spring 2026</span>
           <span className="opacity-40 hidden md:inline">|</span>
-          <span>7 pieces</span>
+          <span>9 pieces</span>
           <span className="opacity-40 hidden md:inline">|</span>
           <span>2 live products</span>
         </p>
@@ -136,6 +136,40 @@ export default function Home() {
               <p className="text-sm text-muted-foreground mb-4">Three-factor model, full data pipeline, and the interpretation that actually matters.</p>
               <div className="mt-auto flex flex-wrap gap-1">
                 {['Python', 'Econometrics', 'Finance'].map(tag => (
+                  <span key={tag} className="text-[10px] text-muted-foreground bg-white/5 px-1.5 py-0.5 rounded">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </Link>
+
+          {/* Causal Forest */}
+          <Link href="/causal-forest" className="block group">
+            <div className="glass-card p-6 h-full flex flex-col">
+              <div className="flex justify-between items-start mb-4">
+                <span className="text-xs font-mono text-muted-foreground">ECON 460</span>
+                <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded">R Markdown</span>
+              </div>
+              <h3 className="text-lg font-serif mb-2 group-hover:text-white transition-colors">Causal Forest — Financial Aid & Retention</h3>
+              <p className="text-sm text-muted-foreground mb-4">Heterogeneous treatment effects on 1,000 universities using causal ML on College Scorecard data.</p>
+              <div className="mt-auto flex flex-wrap gap-1">
+                {['R', 'Causal ML', 'grf'].map(tag => (
+                  <span key={tag} className="text-[10px] text-muted-foreground bg-white/5 px-1.5 py-0.5 rounded">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </Link>
+
+          {/* PCA & Classification */}
+          <Link href="/pca-voting" className="block group">
+            <div className="glass-card p-6 h-full flex flex-col">
+              <div className="flex justify-between items-start mb-4">
+                <span className="text-xs font-mono text-muted-foreground">ECON 460</span>
+                <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded">R Markdown</span>
+              </div>
+              <h3 className="text-lg font-serif mb-2 group-hover:text-white transition-colors">Classification & PCA</h3>
+              <p className="text-sm text-muted-foreground mb-4">Spam logistic regression with ROC/AUC, plus PCA on congressional voting records.</p>
+              <div className="mt-auto flex flex-wrap gap-1">
+                {['R', 'PCA', 'Logistic Regression'].map(tag => (
                   <span key={tag} className="text-[10px] text-muted-foreground bg-white/5 px-1.5 py-0.5 rounded">{tag}</span>
                 ))}
               </div>

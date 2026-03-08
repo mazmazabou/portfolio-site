@@ -18,6 +18,8 @@ import AlArd from "./pages/AlArd";
 import MicrosoftTax from "./pages/MicrosoftTax";
 import DSCI351 from "./pages/DSCI351";
 import MENASlides from "./pages/MENASlides";
+import CausalForest from "./pages/CausalForest";
+import PCAVoting from "./pages/PCAVoting";
 
 
 function Router() {
@@ -33,6 +35,8 @@ function Router() {
         <Route path="/microsoft-tax" component={MicrosoftTax} />
         <Route path="/dsci-351" component={DSCI351} />
         <Route path="/mena-slides" component={MENASlides} />
+        <Route path="/causal-forest" component={CausalForest} />
+        <Route path="/pca-voting" component={PCAVoting} />
 
         {/* Fallback to 404 */}
         <Route component={NotFound} />
