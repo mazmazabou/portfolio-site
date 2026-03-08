@@ -40,6 +40,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* About Section */}
+      <section id="about" className="py-16">
+        <div className="flex items-center gap-4 mb-12">
+          <h2 className="text-2xl font-serif">About</h2>
+          <div className="h-px bg-border flex-1"></div>
+        </div>
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+          <img
+            src="/images/headshot.png"
+            alt="Mazen Abouelela"
+            className="w-full md:w-[280px] shrink-0 rounded-lg border border-border shadow-lg object-cover"
+          />
+          <div className="text-muted-foreground leading-relaxed space-y-4">
+            <p>
+              I grew up in Egypt and moved to the U.S. with my family when I was 13 — starting over in Southern California with very little but a lot of drive. I'm a first-generation college student finishing my M.S. in Applied Economics at USC while working in tech consulting at Aprio.
+            </p>
+            <p>
+              Before any of that, I spent six years as an ocean lifeguard and EMT on Long Beach beaches. That work taught me how to stay calm under pressure, lead a team, and act when it counts — instincts I now bring to building software and advising clients.
+            </p>
+            <p>
+              Three pieces in this portfolio engage the MENA region from different angles — economic intelligence, development policy, and cultural criticism. That's not a coincidence. Where I come from shapes what I pay attention to.
+            </p>
+            <p>
+              Outside of work, I co-founded USC's Egyptian Student Association, captained the LBCC swim team to a state finals appearance, and I'm currently building RideOps — a SaaS platform I conceived from a real problem I saw during my campus transportation job.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Projects Section */}
       <section id="projects" className="py-16">
         <div className="flex items-center gap-4 mb-12">
@@ -249,15 +278,6 @@ export default function Home() {
               </div>
             </div>
           </Link>
-        </div>
-      </section>
-
-      {/* MENA Throughline Callout */}
-      <section className="py-8">
-        <div className="bg-secondary/5 border-l-2 border-secondary p-6 md:p-8">
-          <p className="text-sm md:text-base text-muted-foreground leading-relaxed italic">
-            "Three pieces in this portfolio engage the MENA region from different angles — economic intelligence (MENA Rising), development policy (ECON 305), and cultural criticism (Al-Ard). This is a sustained, multi-year intellectual thread, not a coincidence."
-          </p>
         </div>
       </section>
 

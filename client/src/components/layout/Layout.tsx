@@ -54,6 +54,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               Home
             </Link>
 
+            <button
+              onClick={() => {
+                if (location === '/') {
+                  document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  window.location.href = "/#about";
+                }
+              }}
+              className="text-sm hover:text-primary transition-colors text-foreground"
+            >
+              About
+            </button>
+
             {/* Projects Dropdown */}
             <div
               className="relative py-2"
@@ -145,6 +158,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="md:hidden bg-[#0A0F1C] border-b border-border absolute top-full left-0 w-full animate-in slide-in-from-top-2">
             <nav className="flex flex-col px-6 py-4 gap-4">
               <Link href="/" className="text-lg font-medium">Home</Link>
+
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  if (location === '/') {
+                    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+                  } else {
+                    window.location.href = "/#about";
+                  }
+                }}
+                className="text-lg font-medium text-left"
+              >
+                About
+              </button>
 
               <div className="py-2">
                 <div className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">Projects</div>
