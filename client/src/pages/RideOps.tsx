@@ -23,7 +23,7 @@ export default function RideOps() {
         <h1 className="text-4xl md:text-6xl font-serif mb-4 text-white">RideOps</h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8">Campus Transportation Ops Platform</p>
         
-        <div className="flex flex-col sm:flex-row gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row gap-4 mb-6">
           <a href="https://ride-ops.com" target="_blank" rel="noopener noreferrer">
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-6 rounded-none w-full sm:w-auto text-base">
               Visit ride-ops.com <ExternalLink className="ml-2 h-4 w-4" />
@@ -34,6 +34,43 @@ export default function RideOps() {
               Open App Demo <PlaySquare className="ml-2 h-4 w-4" />
             </Button>
           </a>
+        </div>
+
+        {/* Demo Credentials */}
+        <div className="bg-secondary/10 border border-secondary/30 rounded-lg px-5 py-4 mb-12 flex items-start gap-3 max-w-md">
+          <span className="text-secondary text-lg mt-0.5">&#9654;</span>
+          <div>
+            <p className="text-sm text-white/90 font-medium mb-1">Try the demo</p>
+            <p className="text-sm text-muted-foreground font-mono">
+              username: <span className="text-secondary">office</span> &nbsp;/&nbsp; password: <span className="text-secondary">demo123</span>
+            </p>
+          </div>
+        </div>
+
+        {/* Hero Screenshots */}
+        <div className="grid md:grid-cols-2 gap-4 mb-6">
+          <img src="/images/rideops/usc-office-dispatch.png" alt="RideOps Dispatch Board" className="w-full rounded-lg border border-white/10 shadow-xl" />
+          <img src="/images/rideops/usc-office-analytics-dashboard.png" alt="RideOps Analytics Dashboard" className="w-full rounded-lg border border-white/10 shadow-xl" />
+        </div>
+
+        {/* Screenshot Gallery */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-12">
+          {[
+            { src: 'usc-office-ride-drawer.png', alt: 'Ride Detail Drawer' },
+            { src: 'usc-office-staff-calendar.png', alt: 'Staff Calendar' },
+            { src: 'usc-office-fleet-drawer.png', alt: 'Fleet Management' },
+            { src: 'usc-office-rides-filtered.png', alt: 'Filtered Rides' },
+            { src: 'usc-office-analytics-hotspots.png', alt: 'Analytics Hotspots' },
+            { src: 'usc-office-analytics-milestones.png', alt: 'Analytics Milestones' },
+            { src: 'usc-driver-home.png', alt: 'Driver Home' },
+            { src: 'usc-rider-booking-where.png', alt: 'Rider Booking' },
+            { src: 'ucla-office-dispatch.png', alt: 'UCLA Dispatch (Multi-Tenant)' },
+            { src: 'stanford-office-analytics-dashboard.png', alt: 'Stanford Analytics (Multi-Tenant)' },
+            { src: 'uci-office-dispatch.png', alt: 'UCI Dispatch (Multi-Tenant)' },
+            { src: 'usc-rider-myrides.png', alt: 'Rider My Rides' },
+          ].map(({ src, alt }) => (
+            <img key={src} src={`/images/rideops/${src}`} alt={alt} className="w-full rounded border border-white/10 hover:border-primary/30 transition-colors cursor-pointer" />
+          ))}
         </div>
 
         {/* Stats Strip */}
@@ -104,9 +141,8 @@ export default function RideOps() {
         </div>
         
         <div>
-          <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-3 font-mono">Attribution</h3>
-          <p className="text-sm text-foreground/80 flex items-center gap-2">
-            Sole founder and developer — 100% of design, architecture, and code.
+          <p className="text-sm text-foreground/80">
+            Founder
           </p>
         </div>
       </section>

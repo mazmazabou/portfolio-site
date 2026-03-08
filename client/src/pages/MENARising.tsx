@@ -97,8 +97,8 @@ export default function MENARising() {
         </div>
 
         <div className="pt-8 border-t border-border">
-          <p className="text-sm text-foreground/80 flex items-center gap-2">
-            <span className="font-mono text-muted-foreground uppercase tracking-wider">Attribution:</span> Sole developer and designer — 100%.
+          <p className="text-sm text-foreground/80">
+            Founder
           </p>
         </div>
       </section>

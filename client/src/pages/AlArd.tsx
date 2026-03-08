@@ -59,9 +59,6 @@ export default function AlArd() {
           </a>
         </div>
 
-        <div className="text-sm text-muted-foreground pt-8 border-t border-border">
-          Attribution: Individual — 100%.
-        </div>
       </div>
     </div>
   );

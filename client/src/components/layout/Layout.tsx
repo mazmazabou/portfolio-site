@@ -1,18 +1,43 @@
 import { Link, useLocation } from "wouter";
 import { Menu, X, Github, Linkedin, ChevronDown } from "lucide-react";
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { useState, useEffect, useRef } from "react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isProjectsOpen, setIsProjectsOpen] = useState(false);
-  const [isCourseworkOpen, setIsCourseworkOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setOpenDropdown(null);
   }, [location]);
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setOpenDropdown(null);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleDropdownEnter = (name: string) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpenDropdown(name);
+  };
+
+  const handleDropdownLeave = () => {
+    closeTimer.current = setTimeout(() => setOpenDropdown(null), 300);
+  };
+
+  const toggleDropdown = (name: string) => {
+    setOpenDropdown(prev => prev === name ? null : name);
+  };
 
   return (
     <div className="min-h-screen flex flex-col font-sans">
@@ -24,22 +49,25 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8" ref={dropdownRef}>
             <Link href="/" className={`text-sm hover:text-primary transition-colors ${location === '/' ? 'text-primary' : 'text-foreground'}`}>
               Home
             </Link>
-            
+
             {/* Projects Dropdown */}
-            <div 
-              className="relative group py-2"
-              onMouseEnter={() => setIsProjectsOpen(true)}
-              onMouseLeave={() => setIsProjectsOpen(false)}
+            <div
+              className="relative py-2"
+              onMouseEnter={() => handleDropdownEnter('projects')}
+              onMouseLeave={handleDropdownLeave}
             >
-              <button className={`flex items-center gap-1 text-sm hover:text-primary transition-colors ${(location === '/ride-ops' || location === '/mena-rising') ? 'text-primary' : 'text-foreground'}`}>
-                Projects <ChevronDown size={14} className="opacity-50" />
+              <button
+                onClick={() => toggleDropdown('projects')}
+                className={`flex items-center gap-1 text-sm hover:text-primary transition-colors ${(location === '/ride-ops' || location === '/mena-rising') ? 'text-primary' : 'text-foreground'}`}
+              >
+                Projects <ChevronDown size={14} className={`opacity-50 transition-transform ${openDropdown === 'projects' ? 'rotate-180' : ''}`} />
               </button>
-              
-              {isProjectsOpen && (
+
+              {openDropdown === 'projects' && (
                 <div className="absolute top-full left-0 mt-2 w-48 bg-[#0A0F1C] border border-border rounded-lg shadow-xl overflow-hidden py-1">
                   <Link href="/ride-ops" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
                     RideOps
@@ -52,22 +80,22 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
 
             {/* Coursework Dropdown */}
-            <div 
-              className="relative group py-2"
-              onMouseEnter={() => setIsCourseworkOpen(true)}
-              onMouseLeave={() => setIsCourseworkOpen(false)}
+            <div
+              className="relative py-2"
+              onMouseEnter={() => handleDropdownEnter('coursework')}
+              onMouseLeave={handleDropdownLeave}
             >
-              <button className={`flex items-center gap-1 text-sm hover:text-primary transition-colors ${(location === '/fama-french' || location === '/econ-500' || location === '/al-ard' || location === '/microsoft-tax' || location === '/dsci-351' || location === '/mena-slides') ? 'text-primary' : 'text-foreground'}`}>
-                Coursework <ChevronDown size={14} className="opacity-50" />
+              <button
+                onClick={() => toggleDropdown('coursework')}
+                className={`flex items-center gap-1 text-sm hover:text-primary transition-colors ${(location === '/fama-french' || location === '/al-ard' || location === '/microsoft-tax' || location === '/dsci-351' || location === '/mena-slides') ? 'text-primary' : 'text-foreground'}`}
+              >
+                Coursework <ChevronDown size={14} className={`opacity-50 transition-transform ${openDropdown === 'coursework' ? 'rotate-180' : ''}`} />
               </button>
-              
-              {isCourseworkOpen && (
+
+              {openDropdown === 'coursework' && (
                 <div className="absolute top-full left-0 mt-2 w-56 bg-[#0A0F1C] border border-border rounded-lg shadow-xl overflow-hidden py-1">
                   <Link href="/fama-french" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
                     Fama-French
-                  </Link>
-                  <Link href="/econ-500" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
-                    ECON 500
                   </Link>
                   <Link href="/al-ard" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
                     Al-Ard
@@ -85,24 +113,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               )}
             </div>
 
-            <Link href="/valentine" className={`text-sm hover:text-primary transition-colors ${location === '/valentine' ? 'text-primary' : 'text-foreground'}`}>
-              Personal
-            </Link>
-
             <div className="w-px h-4 bg-border ml-2 mr-2"></div>
-            
+
             <div className="flex items-center gap-4">
               <a href="https://github.com/mazmazabou" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                 <Github size={18} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/mazen-abouelela-88a559205/" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                 <Linkedin size={18} />
               </a>
             </div>
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className="md:hidden text-foreground p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -115,7 +139,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="md:hidden bg-[#0A0F1C] border-b border-border absolute top-full left-0 w-full animate-in slide-in-from-top-2">
             <nav className="flex flex-col px-6 py-4 gap-4">
               <Link href="/" className="text-lg font-medium">Home</Link>
-              
+
               <div className="py-2">
                 <div className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">Projects</div>
                 <div className="flex flex-col gap-3 pl-4 border-l border-white/10">
@@ -128,7 +152,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <div className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">Coursework</div>
                 <div className="flex flex-col gap-3 pl-4 border-l border-white/10">
                   <Link href="/fama-french" className="text-lg">Fama-French</Link>
-                  <Link href="/econ-500" className="text-lg">ECON 500</Link>
                   <Link href="/al-ard" className="text-lg">Al-Ard</Link>
                   <Link href="/microsoft-tax" className="text-lg">Microsoft Tax</Link>
                   <Link href="/dsci-351" className="text-lg">DSCI 351</Link>
@@ -136,11 +159,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </div>
               </div>
 
-              <Link href="/valentine" className="text-lg font-medium">Personal</Link>
-              
               <div className="flex gap-6 mt-4 pt-4 border-t border-white/10">
                 <a href="https://github.com/mazmazabou" className="text-foreground" target="_blank" rel="noopener noreferrer"><Github size={24} /></a>
-                <a href="#" className="text-foreground"><Linkedin size={24} /></a>
+                <a href="https://www.linkedin.com/in/mazen-abouelela-88a559205/" className="text-foreground" target="_blank" rel="noopener noreferrer"><Linkedin size={24} /></a>
               </div>
             </nav>
           </div>
@@ -164,14 +185,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <a href="mailto:placeholder@example.com" className="text-sm hover:text-primary transition-colors">
               Email
             </a>
-            <a href="#" className="text-sm hover:text-primary transition-colors">
+            <a href="/pdfs/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-primary transition-colors">
               Resume
             </a>
             <div className="flex gap-4">
               <a href="https://github.com/mazmazabou" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                 <Github size={18} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/in/mazen-abouelela-88a559205/" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                 <Linkedin size={18} />
               </a>
             </div>

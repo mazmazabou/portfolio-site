@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, ArrowDown } from "lucide-react";
+import { ArrowRight, ArrowDown, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
@@ -20,13 +20,9 @@ export default function Home() {
         <p className="text-sm md:text-base font-mono text-primary/80 mb-12 flex flex-wrap gap-2 items-center">
           <span>USC · Fall 2022 – Spring 2026</span>
           <span className="opacity-40 hidden md:inline">|</span>
-          <span>9 pieces</span>
-          <span className="opacity-40 hidden md:inline">|</span>
-          <span>5 formats</span>
+          <span>7 pieces</span>
           <span className="opacity-40 hidden md:inline">|</span>
           <span>2 live products</span>
-          <span className="opacity-40 hidden md:inline">|</span>
-          <span>zero filler</span>
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <Link href="/ride-ops">
@@ -34,8 +30,8 @@ export default function Home() {
               See RideOps <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             onClick={scrollToProjects}
             className="border-border text-foreground hover:bg-white/5 h-12 px-8 text-base rounded-none w-full sm:w-auto"
           >
@@ -56,7 +52,7 @@ export default function Home() {
           <Link href="/ride-ops" className="block group">
             <div className="glass-card h-full p-8 md:p-10 flex flex-col relative overflow-hidden group-hover:border-primary/50 transition-all duration-500">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              
+
               <div className="mb-6 flex flex-wrap gap-2">
                 {['SaaS', 'Full-Stack', 'Product', 'PostgreSQL', 'React', 'Multi-Tenant'].map(tag => (
                   <span key={tag} className="text-[10px] font-mono uppercase tracking-wider px-2 py-1 bg-white/5 text-muted-foreground border border-white/10 rounded-full">
@@ -64,18 +60,18 @@ export default function Home() {
                   </span>
                 ))}
               </div>
-              
+
               <h3 className="text-2xl md:text-3xl font-serif mb-4 group-hover:text-primary transition-colors">RideOps — Campus Transportation Ops Platform</h3>
-              
+
               <p className="text-muted-foreground leading-relaxed mb-8 flex-1">
                 A white-labeled, multi-tenant SaaS platform for university accessibility transportation. Live in production with 4 campuses demo-ready.
               </p>
-              
+
               <div className="mt-auto">
                 <div className="bg-black/40 border border-white/5 p-4 mb-6 font-mono text-xs text-secondary/90 leading-relaxed">
                   29 analytics widgets · 21 notification types · 4 campuses · 6-state ride lifecycle
                 </div>
-                
+
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
@@ -92,7 +88,7 @@ export default function Home() {
             <div className="glass-card h-full p-8 md:p-10 flex flex-col relative overflow-hidden group-hover:border-secondary/50 transition-all duration-500 pattern-zellige">
               <div className="absolute inset-0 bg-[#0A0F1C]/90 -z-10"></div>
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              
+
               <div className="mb-6 flex flex-wrap gap-2">
                 {['React', 'TypeScript', 'Python Pipeline', 'AI/LLM', 'MENA', 'Data Viz'].map(tag => (
                   <span key={tag} className="text-[10px] font-mono uppercase tracking-wider px-2 py-1 bg-white/5 text-muted-foreground border border-white/10 rounded-full">
@@ -100,13 +96,13 @@ export default function Home() {
                   </span>
                 ))}
               </div>
-              
+
               <h3 className="text-2xl md:text-3xl font-serif mb-4 group-hover:text-secondary transition-colors">MENA Rising — Weekly Economic Intelligence</h3>
-              
+
               <p className="text-muted-foreground leading-relaxed mb-8 flex-1 font-editorial text-lg">
                 A Claude-powered MENA economic briefing app with an Ottoman design system. Live with automated weekly pipeline.
               </p>
-              
+
               <div className="mt-auto">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -140,23 +136,6 @@ export default function Home() {
               <p className="text-sm text-muted-foreground mb-4">Three-factor model, full data pipeline, and the interpretation that actually matters.</p>
               <div className="mt-auto flex flex-wrap gap-1">
                 {['Python', 'Econometrics', 'Finance'].map(tag => (
-                  <span key={tag} className="text-[10px] text-muted-foreground bg-white/5 px-1.5 py-0.5 rounded">{tag}</span>
-                ))}
-              </div>
-            </div>
-          </Link>
-
-          {/* ECON 500 */}
-          <Link href="/econ-500" className="block group">
-            <div className="glass-card p-6 h-full flex flex-col">
-              <div className="flex justify-between items-start mb-4">
-                <span className="text-xs font-mono text-muted-foreground">Graduate Econometrics</span>
-                <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-white/10 text-white/80 border border-white/20 rounded">LaTeX PDF · 17 pages</span>
-              </div>
-              <h3 className="text-lg font-serif mb-2 group-hover:text-white transition-colors">ECON 500 Final Exam</h3>
-              <p className="text-sm text-muted-foreground mb-4">Seven questions covering the full causal inference toolkit.</p>
-              <div className="mt-auto flex flex-wrap gap-1">
-                {['Econometrics', 'LaTeX', 'IV', 'DiD'].map(tag => (
                   <span key={tag} className="text-[10px] text-muted-foreground bg-white/5 px-1.5 py-0.5 rounded">{tag}</span>
                 ))}
               </div>
@@ -248,28 +227,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Personal Section */}
-      <section className="py-16">
-        <div className="flex items-center gap-4 mb-8">
-          <h2 className="text-2xl font-serif text-white/80">Personal</h2>
+      {/* Certifications */}
+      <section className="py-8">
+        <div className="flex items-center gap-4 mb-6">
+          <h2 className="text-lg font-serif text-white/80">Certifications</h2>
           <div className="h-px bg-border flex-1"></div>
         </div>
-        
-        <Link href="/valentine" className="block group max-w-sm">
-          <div className="glass-card p-6 border-white/5 group-hover:bg-white/5 transition-colors">
-            <h3 className="text-lg font-serif text-white/90 mb-2">Valentine — A Personal Project</h3>
-            <p className="text-sm text-muted-foreground mb-6">Not everything I build is for a course, a client, or a job application.</p>
-            <div className="flex items-center justify-between">
-              <div className="flex gap-2">
-                <span className="text-[10px] bg-red-500/10 text-red-400 px-2 py-1 rounded">Personal Project</span>
-                <span className="text-[10px] bg-red-500/10 text-red-400 px-2 py-1 rounded">Built for Love</span>
-              </div>
-              <span className="text-xs text-white/60 group-hover:text-white transition-colors flex items-center gap-1">
-                Open <ArrowRight size={12} />
-              </span>
-            </div>
+        <a href="/pdfs/data-analyst-cert.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 glass-card px-5 py-3 hover:border-primary/30 transition-colors group">
+          <Award size={18} className="text-primary" />
+          <div>
+            <p className="text-sm text-white/90 group-hover:text-white transition-colors">DataCamp Data Analyst Associate</p>
+            <p className="text-[11px] text-muted-foreground">View certificate</p>
           </div>
-        </Link>
+        </a>
       </section>
     </div>
   );

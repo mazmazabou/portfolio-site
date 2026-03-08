@@ -54,13 +54,12 @@ export default function MENASlides() {
             ))}
           </div>
           <p className="text-xs font-mono text-muted-foreground text-center uppercase tracking-wider">
-            Selected Slides — co-authored with Dev Kapashi <br/>
-            <span className="opacity-50 lowercase tracking-normal text-[10px]">(Screenshots only — reflects partial contribution scope)</span>
+            Selected Slides — with Dev Kapashi
           </p>
         </div>
 
         <div className="text-sm text-muted-foreground pt-8 border-t border-border">
-          Attribution: Co-authored with Dev Kapashi — joint project.
+          With Dev Kapashi
         </div>
       </div>
     </div>

@@ -37,9 +37,6 @@ export default function DSCI351() {
           <p>
             The report documents the full build: ER diagram with five entity relationships, five Python backend modules, three complex MongoDB aggregate pipeline queries, and a Tkinter GUI with CRUD operations across all entities.
           </p>
-          <p className="p-4 bg-white/5 border border-white/10 rounded-lg text-white/90">
-            My contributions were the top-down architecture design, the justification for the Redis/MongoDB split, and all of the NoSQL query work — including three multi-stage aggregate pipelines for cross-entity queries that the flat Redis key-value structure couldn't handle directly.
-          </p>
         </div>
 
         {/* PDF Viewer */}
@@ -54,7 +51,7 @@ export default function DSCI351() {
         </div>
 
         <div className="text-sm text-muted-foreground pt-8 border-t border-border">
-          Attribution: Co-authored with Dev Kapashi. Mazen's contributions: architecture planning, database design decisions, all NoSQL query work.
+          With Dev Kapashi
         </div>
       </div>
     </div>
