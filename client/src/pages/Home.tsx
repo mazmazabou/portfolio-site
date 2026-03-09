@@ -23,6 +23,8 @@ export default function Home() {
           <span>9 pieces</span>
           <span className="opacity-40 hidden md:inline">|</span>
           <span>2 live products</span>
+          <span className="opacity-40 hidden md:inline">|</span>
+          <span>3 runnable notebooks</span>
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <Link href="/ride-ops">
