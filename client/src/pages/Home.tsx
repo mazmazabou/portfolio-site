@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { ArrowRight, ArrowDown, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import HeroParticles from "@/components/HeroParticles";
 
 export default function Home() {
   const scrollToProjects = () => {
@@ -10,6 +11,8 @@ export default function Home() {
   return (
     <div className="px-6 pb-24 animate-in fade-in duration-700">
       {/* Hero Section */}
+      <div className="relative">
+        <HeroParticles />
       <section className="pt-32 pb-24 md:pt-48 md:pb-32 max-w-4xl">
         <h1 className="text-5xl md:text-7xl font-serif mb-6 leading-tight text-white tracking-tight">
           MAZEN ABOUELELA
@@ -41,11 +44,15 @@ export default function Home() {
           </Button>
         </div>
       </section>
+      </div>
 
       {/* About Section */}
       <section id="about" className="py-16">
         <div className="flex items-center gap-4 mb-12">
-          <h2 className="text-2xl font-serif">About</h2>
+          <div className="flex items-center gap-3">
+            <div className="w-[3px] h-6 bg-primary rounded-full"></div>
+            <h2 className="text-2xl font-serif">About</h2>
+          </div>
           <div className="h-px bg-border flex-1"></div>
         </div>
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
@@ -74,16 +81,52 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects" className="py-16">
         <div className="flex items-center gap-4 mb-12">
-          <h2 className="text-2xl font-serif">Live Products</h2>
+          <div className="flex items-center gap-3">
+            <div className="w-[3px] h-6 bg-primary rounded-full"></div>
+            <h2 className="text-2xl font-serif">Live Products</h2>
+          </div>
           <div className="h-px bg-border flex-1"></div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Card 1: RideOps */}
           <Link href="/ride-ops" className="block group">
-            <div className="glass-card h-full p-8 md:p-10 flex flex-col relative overflow-hidden group-hover:border-primary/50 transition-all duration-500">
+            <div className="glass-card h-full flex flex-col relative overflow-hidden group-hover:border-primary/50 transition-all duration-500">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
+              {/* Dashboard wireframe visual */}
+              <div className="relative h-[160px] overflow-hidden border-b border-white/5"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(148,163,184,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.04) 1px, transparent 1px)`,
+                  backgroundSize: '24px 24px',
+                }}>
+                <div className="absolute inset-0 flex flex-col justify-center gap-3 px-8">
+                  <div className="relative h-2.5 rounded-full bg-primary/12 origin-left" style={{ width: '75%', animation: 'bar-grow 1.5s ease-out forwards' }}>
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-primary/30" style={{ animation: 'dot-pulse 3s ease-in-out infinite' }} />
+                  </div>
+                  <div className="relative h-2.5 rounded-full bg-primary/10 origin-left" style={{ width: '52%', animation: 'bar-grow 1.5s ease-out 0.2s forwards' }}>
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-primary/25" style={{ animation: 'dot-pulse 3s ease-in-out 0.5s infinite' }} />
+                  </div>
+                  <div className="relative h-2.5 rounded-full bg-primary/8 origin-left" style={{ width: '88%', animation: 'bar-grow 1.5s ease-out 0.4s forwards' }}>
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-primary/20" style={{ animation: 'dot-pulse 3s ease-in-out 1s infinite' }} />
+                  </div>
+                  <div className="relative h-2.5 rounded-full bg-primary/6 origin-left" style={{ width: '40%', animation: 'bar-grow 1.5s ease-out 0.6s forwards' }}>
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-primary/15" style={{ animation: 'dot-pulse 3s ease-in-out 1.5s infinite' }} />
+                  </div>
+                </div>
+                {/* Faint metric labels */}
+                <div className="absolute top-4 right-4 flex gap-4">
+                  <div className="h-1.5 w-12 rounded bg-primary/6"></div>
+                  <div className="h-1.5 w-8 rounded bg-primary/4"></div>
+                </div>
+                <div className="absolute bottom-4 left-8 flex gap-6">
+                  <div className="h-1 w-10 rounded bg-white/4"></div>
+                  <div className="h-1 w-14 rounded bg-white/4"></div>
+                  <div className="h-1 w-8 rounded bg-white/4"></div>
+                </div>
+              </div>
+
+              <div className="p-8 md:p-10 flex flex-col flex-1">
               <div className="mb-6 flex flex-wrap gap-2">
                 {['SaaS', 'Full-Stack', 'Product', 'PostgreSQL', 'React', 'Multi-Tenant'].map(tag => (
                   <span key={tag} className="text-[10px] font-mono uppercase tracking-wider px-2 py-1 bg-white/5 text-muted-foreground border border-white/10 rounded-full">
@@ -111,15 +154,40 @@ export default function Home() {
                   <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:-rotate-45 transition-all" />
                 </div>
               </div>
+              </div>
             </div>
           </Link>
 
           {/* Card 2: MENA Rising */}
           <Link href="/mena-rising" className="block group">
-            <div className="glass-card h-full p-8 md:p-10 flex flex-col relative overflow-hidden group-hover:border-secondary/50 transition-all duration-500 pattern-zellige">
+            <div className="glass-card h-full flex flex-col relative overflow-hidden group-hover:border-secondary/50 transition-all duration-500 pattern-zellige">
               <div className="absolute inset-0 bg-[#0A0F1C]/90 -z-10"></div>
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
+              {/* Network graph visual */}
+              <div className="relative h-[160px] overflow-hidden border-b border-white/5 z-10">
+                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 160" preserveAspectRatio="xMidYMid slice">
+                  {/* Connection lines */}
+                  <line x1="80" y1="50" x2="180" y2="80" stroke="#2DD4BF" strokeOpacity="0.08" strokeWidth="1" />
+                  <line x1="180" y1="80" x2="300" y2="45" stroke="#2DD4BF" strokeOpacity="0.08" strokeWidth="1" />
+                  <line x1="180" y1="80" x2="250" y2="120" stroke="#2DD4BF" strokeOpacity="0.06" strokeWidth="1" />
+                  <line x1="300" y1="45" x2="350" y2="100" stroke="#2DD4BF" strokeOpacity="0.06" strokeWidth="1" />
+                  <line x1="80" y1="50" x2="120" y2="120" stroke="#2DD4BF" strokeOpacity="0.06" strokeWidth="1" />
+                  <line x1="120" y1="120" x2="250" y2="120" stroke="#2DD4BF" strokeOpacity="0.05" strokeWidth="1" />
+                  <line x1="50" y1="100" x2="80" y2="50" stroke="#2DD4BF" strokeOpacity="0.05" strokeWidth="1" />
+                  <line x1="50" y1="100" x2="120" y2="120" stroke="#2DD4BF" strokeOpacity="0.04" strokeWidth="1" />
+                  {/* Nodes */}
+                  <circle cx="80" cy="50" r="4" fill="#2DD4BF" fillOpacity="0.12" style={{ animation: 'node-pulse 4s ease-in-out infinite' }} />
+                  <circle cx="180" cy="80" r="5" fill="#2DD4BF" fillOpacity="0.15" style={{ animation: 'node-pulse 4s ease-in-out 0.5s infinite' }} />
+                  <circle cx="300" cy="45" r="3.5" fill="#2DD4BF" fillOpacity="0.1" style={{ animation: 'node-pulse 4s ease-in-out 1s infinite' }} />
+                  <circle cx="250" cy="120" r="4" fill="#2DD4BF" fillOpacity="0.12" style={{ animation: 'node-pulse 4s ease-in-out 1.5s infinite' }} />
+                  <circle cx="350" cy="100" r="3" fill="#2DD4BF" fillOpacity="0.08" style={{ animation: 'node-pulse 4s ease-in-out 2s infinite' }} />
+                  <circle cx="120" cy="120" r="3.5" fill="#2DD4BF" fillOpacity="0.1" style={{ animation: 'node-pulse 4s ease-in-out 2.5s infinite' }} />
+                  <circle cx="50" cy="100" r="3" fill="#2DD4BF" fillOpacity="0.08" style={{ animation: 'node-pulse 4s ease-in-out 3s infinite' }} />
+                </svg>
+              </div>
+
+              <div className="p-8 md:p-10 flex flex-col flex-1">
               <div className="mb-6 flex flex-wrap gap-2">
                 {['React', 'TypeScript', 'Python Pipeline', 'AI/LLM', 'MENA', 'Data Viz'].map(tag => (
                   <span key={tag} className="text-[10px] font-mono uppercase tracking-wider px-2 py-1 bg-white/5 text-muted-foreground border border-white/10 rounded-full">
@@ -131,7 +199,7 @@ export default function Home() {
               <h3 className="text-2xl md:text-3xl font-serif mb-4 group-hover:text-secondary transition-colors">MENA Rising — Weekly Economic Intelligence</h3>
 
               <p className="text-muted-foreground leading-relaxed mb-8 flex-1 font-editorial text-lg">
-                A Claude-powered MENA economic briefing app with an Ottoman design system. Live with automated weekly pipeline.
+                An AI-powered emerging-markets intelligence app tracking MENA economic signals weekly. Built with an Ottoman design system and a fully automated data pipeline.
               </p>
 
               <div className="mt-auto">
@@ -143,6 +211,7 @@ export default function Home() {
                   <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-secondary group-hover:-rotate-45 transition-all" />
                 </div>
               </div>
+              </div>
             </div>
           </Link>
         </div>
@@ -151,7 +220,10 @@ export default function Home() {
       {/* Coursework Section */}
       <section className="py-16">
         <div className="flex items-center gap-4 mb-12">
-          <h2 className="text-2xl font-serif">Selected Coursework</h2>
+          <div className="flex items-center gap-3">
+            <div className="w-[3px] h-6 bg-primary rounded-full"></div>
+            <h2 className="text-2xl font-serif">Selected Coursework</h2>
+          </div>
           <div className="h-px bg-border flex-1"></div>
         </div>
 
@@ -286,7 +358,10 @@ export default function Home() {
       {/* Certifications */}
       <section className="py-8">
         <div className="flex items-center gap-4 mb-6">
-          <h2 className="text-lg font-serif text-white/80">Certifications</h2>
+          <div className="flex items-center gap-2.5">
+            <div className="w-[2px] h-4 bg-primary rounded-full"></div>
+            <h2 className="text-lg font-serif text-white/80">Certifications</h2>
+          </div>
           <div className="h-px bg-border flex-1"></div>
         </div>
         <a href="/pdfs/data-analyst-cert.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 glass-card px-5 py-3 hover:border-primary/30 transition-colors group">
