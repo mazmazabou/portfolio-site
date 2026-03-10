@@ -20,6 +20,8 @@ import DSCI351 from "./pages/DSCI351";
 import MENASlides from "./pages/MENASlides";
 import CausalForest from "./pages/CausalForest";
 import PCAVoting from "./pages/PCAVoting";
+import Connect4 from "./pages/Connect4";
+import Blackjack from "./pages/Blackjack";
 
 
 function Router() {
@@ -37,6 +39,8 @@ function Router() {
         <Route path="/mena-slides" component={MENASlides} />
         <Route path="/causal-forest" component={CausalForest} />
         <Route path="/pca-voting" component={PCAVoting} />
+        <Route path="/connect-4" component={Connect4} />
+        <Route path="/blackjack" component={Blackjack} />
 
         {/* 404 fallback */}
         <Route component={NotFound} />

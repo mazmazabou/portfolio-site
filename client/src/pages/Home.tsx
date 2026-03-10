@@ -23,11 +23,13 @@ export default function Home() {
         <p className="text-sm md:text-base font-mono text-primary/80 mb-12 flex flex-wrap gap-2 items-center">
           <span>USC · Fall 2022 – Spring 2026</span>
           <span className="opacity-40 hidden md:inline">|</span>
-          <span>9 pieces</span>
+          <span>11 pieces</span>
           <span className="opacity-40 hidden md:inline">|</span>
           <span>2 live products</span>
           <span className="opacity-40 hidden md:inline">|</span>
           <span>3 runnable notebooks</span>
+          <span className="opacity-40 hidden md:inline">|</span>
+          <span>2 playable games</span>
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <Link href="/ride-ops">
@@ -349,6 +351,40 @@ export default function Home() {
                   ))}
                 </div>
                 <span className="text-[10px] text-muted-foreground italic">with Dev Kapashi</span>
+              </div>
+            </div>
+          </Link>
+
+          {/* Connect 4 */}
+          <Link href="/connect-4" className="block group">
+            <div className="glass-card p-6 h-full flex flex-col">
+              <div className="flex justify-between items-start mb-4">
+                <span className="text-xs font-mono text-muted-foreground">CSCI 103</span>
+                <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded">C++ · Playable</span>
+              </div>
+              <h3 className="text-lg font-serif mb-2 group-hover:text-white transition-colors">Connect 4</h3>
+              <p className="text-sm text-muted-foreground mb-4">Terminal-based game ported to the browser. Play against an AI that blocks, attacks, then falls back to positional play.</p>
+              <div className="mt-auto flex flex-wrap gap-1">
+                {['C++', 'Game AI', 'Dynamic Memory', 'Win Detection'].map(tag => (
+                  <span key={tag} className="text-[10px] text-muted-foreground bg-white/5 px-1.5 py-0.5 rounded">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </Link>
+
+          {/* Blackjack */}
+          <Link href="/blackjack" className="block group">
+            <div className="glass-card p-6 h-full flex flex-col">
+              <div className="flex justify-between items-start mb-4">
+                <span className="text-xs font-mono text-muted-foreground">CSCI 103</span>
+                <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded">C++ · Playable</span>
+              </div>
+              <h3 className="text-lg font-serif mb-2 group-hover:text-white transition-colors">Blackjack (Twenty-One)</h3>
+              <p className="text-sm text-muted-foreground mb-4">Full game loop with Fisher-Yates shuffle, soft/hard Ace logic, and dealer AI that hits to 17.</p>
+              <div className="mt-auto flex flex-wrap gap-1">
+                {['C++', 'Fisher-Yates', 'Game Logic', 'Card Rendering'].map(tag => (
+                  <span key={tag} className="text-[10px] text-muted-foreground bg-white/5 px-1.5 py-0.5 rounded">{tag}</span>
+                ))}
               </div>
             </div>
           </Link>
