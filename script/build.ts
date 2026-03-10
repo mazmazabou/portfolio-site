@@ -50,60 +50,67 @@ const routeMeta: Record<string, RouteMeta> = {
     title: "RideOps — Campus Transportation Ops Platform",
     description:
       "A white-labeled, multi-tenant SaaS platform for university accessibility transportation. Live in production with 4 campuses demo-ready.",
+    image: "/images/og/ride-ops.png",
   },
   "mena-rising": {
     title: "MENA Rising — Weekly Economic Intelligence",
     description:
       "An AI-powered emerging-markets intelligence app tracking MENA economic signals weekly. Built with an Ottoman design system and a fully automated data pipeline.",
+    image: "/images/og/mena-rising.png",
   },
   "fama-french": {
     title: "Fama-French Factor Analysis",
     description:
       "Three-factor model implementation end-to-end: data ingestion, factor construction, OLS regression, and interpretation. ECON 577, USC.",
+    image: "/images/og/fama-french.png",
   },
   "causal-forest": {
     title: "Causal Forest — Financial Aid & Retention",
     description:
       "Heterogeneous treatment effects on 1,000 universities using causal ML on College Scorecard data. ECON 460, USC.",
+    image: "/images/og/causal-forest.png",
   },
   "pca-voting": {
     title: "Classification & PCA",
     description:
       "Spam logistic regression with ROC/AUC, plus PCA on congressional voting records. ECON 460, USC.",
+    image: "/images/og/pca-voting.png",
   },
   "al-ard": {
     title: "Al-Ard — Film Review",
     description:
       "Close reading of Chahine's 1969 Egyptian film. MDES 401, USC.",
+    image: "/images/og/al-ard.png",
   },
   "microsoft-tax": {
     title: "Microsoft Ireland Tax Memo",
     description:
       "$858M in Microsoft tax savings — calculated from real S&P Capital IQ data. WRIT 340, USC.",
+    image: "/images/og/microsoft-tax.png",
   },
   "dsci-351": {
     title: "Dual-Database Inventory System",
     description:
       "Redis + MongoDB dual-database architecture with aggregate pipelines, CRUD operations, and Tkinter GUI. DSCI 351, USC.",
+    image: "/images/og/dsci-351.png",
   },
   "mena-slides": {
     title: "Growth Challenges in MENA",
     description:
       "Structural growth barriers across the MENA region. ECON 305, USC.",
+    image: "/images/og/mena-slides.png",
   },
   "connect-4": {
     title: "Connect 4 — Playable C++ Port",
     description:
       "Terminal-based Connect 4 ported to the browser. Play against an AI with delta-vector win detection and a three-priority rule system. CSCI 103, USC.",
+    image: "/images/og/connect-4.png",
   },
   blackjack: {
     title: "Blackjack (Twenty-One) — Playable C++ Port",
     description:
       "Full Blackjack game with Fisher-Yates shuffle, soft/hard Ace logic, and dealer AI. Ported from a CSCI 103 C++ assignment at USC.",
-  },
-  valentine: {
-    title: "Valentine",
-    description: "A personal project by Mazen Abouelela.",
+    image: "/images/og/blackjack.png",
   },
 };
 
