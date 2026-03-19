@@ -6,11 +6,24 @@ import { createServer } from "http";
 const app = express();
 const httpServer = createServer(app);
 
+// Suppress X-Powered-By header
+app.disable('x-powered-by');
+
 declare module "http" {
   interface IncomingMessage {
     rawBody: unknown;
   }
 }
+
+// Security headers for local dev (no HSTS or CSP — would break localhost HTTP and Vite HMR)
+app.use((_req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), interest-cohort=()');
+  next();
+});
 
 app.use(
   express.json({

@@ -37,7 +37,7 @@ const allowlist = [
 // Each route gets its own index.html with unique title, description, and image.
 // Vercel serves these via { "handle": "filesystem" } before the SPA catch-all.
 
-const BASE_URL = "https://mazen-portfolio-three.vercel.app";
+const BASE_URL = "https://mazenabouelela.com";
 
 interface RouteMeta {
   title: string;
