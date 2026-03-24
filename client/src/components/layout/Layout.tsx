@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Menu, X, Github, Linkedin, ChevronDown } from "lucide-react";
+import { Menu, X, Github, Linkedin, ChevronDown, Gamepad2 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -132,6 +132,31 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               )}
             </div>
 
+            {/* Games Dropdown */}
+            <div
+              className="relative py-2"
+              onMouseEnter={() => handleDropdownEnter('games')}
+              onMouseLeave={handleDropdownLeave}
+            >
+              <button
+                onClick={() => toggleDropdown('games')}
+                className={`flex items-center gap-1 text-sm hover:text-primary transition-colors ${(location === '/connect-4' || location === '/blackjack') ? 'text-primary' : 'text-foreground'}`}
+              >
+                <Gamepad2 size={14} className="opacity-70" /> Games <ChevronDown size={14} className={`opacity-50 transition-transform ${openDropdown === 'games' ? 'rotate-180' : ''}`} />
+              </button>
+
+              {openDropdown === 'games' && (
+                <div className="absolute top-full left-0 mt-2 w-48 bg-[#0A0F1C] border border-border rounded-lg shadow-xl overflow-hidden py-1">
+                  <Link href="/connect-4" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
+                    Connect 4
+                  </Link>
+                  <Link href="/blackjack" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
+                    Blackjack
+                  </Link>
+                </div>
+              )}
+            </div>
+
             <div className="w-px h-4 bg-border ml-2 mr-2"></div>
 
             <div className="flex items-center gap-4">
@@ -191,6 +216,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <Link href="/mena-slides" className="text-lg">MENA Slides</Link>
                   <Link href="/causal-forest" className="text-lg">Causal Forest</Link>
                   <Link href="/pca-voting" className="text-lg">PCA & Classification</Link>
+                </div>
+              </div>
+
+              <div className="py-2">
+                <div className="text-sm text-muted-foreground mb-2 uppercase tracking-wider flex items-center gap-1.5"><Gamepad2 size={12} /> Games</div>
+                <div className="flex flex-col gap-3 pl-4 border-l border-white/10">
+                  <Link href="/connect-4" className="text-lg">Connect 4</Link>
+                  <Link href="/blackjack" className="text-lg">Blackjack</Link>
                 </div>
               </div>
 

@@ -1,15 +1,88 @@
-import { Link } from "wouter";
-import { ArrowRight, ArrowDown, Award } from "lucide-react";
+import { Link, useLocation } from "wouter";
+import { ArrowRight, ArrowDown, Award, Gamepad2 } from "lucide-react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import HeroParticles from "@/components/HeroParticles";
 
 export default function Home() {
+  const [, navigate] = useLocation();
+  const [showGameModal, setShowGameModal] = useState(false);
+
+  useEffect(() => {
+    const dismissed = localStorage.getItem("portfolio-game-dismissed");
+    if (!dismissed) {
+      const timer = setTimeout(() => setShowGameModal(true), 1500);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const handleGameChoice = (path: string) => {
+    localStorage.setItem("portfolio-game-dismissed", "true");
+    setShowGameModal(false);
+    navigate(path);
+  };
+
+  const handleDismiss = () => {
+    localStorage.setItem("portfolio-game-dismissed", "true");
+    setShowGameModal(false);
+  };
+
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="px-6 pb-24 animate-in fade-in duration-700">
+      {/* Welcome Game Modal */}
+      <Dialog open={showGameModal} onOpenChange={(open) => { if (!open) handleDismiss(); }}>
+        <DialogContent className="bg-[#0A0F1C] border-border sm:max-w-md">
+          <DialogHeader className="text-center sm:text-center">
+            <div className="flex justify-center mb-3">
+              <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+                <Gamepad2 className="w-7 h-7 text-primary" />
+              </div>
+            </div>
+            <DialogTitle className="text-2xl font-serif text-white">Wanna play a game?</DialogTitle>
+            <DialogDescription className="text-muted-foreground text-sm mt-1">
+              Before you explore — try one of my CSCI 103 projects, ported from C++ to the browser.
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="grid grid-cols-2 gap-3 mt-2">
+            <button
+              onClick={() => handleGameChoice("/connect-4")}
+              className="group glass-card p-4 text-left hover:border-primary/40 transition-all"
+            >
+              <div className="text-2xl mb-2">🔴</div>
+              <h3 className="font-serif text-white group-hover:text-primary transition-colors text-sm font-medium">Connect 4</h3>
+              <p className="text-[11px] text-muted-foreground mt-1">Play against an AI opponent</p>
+            </button>
+
+            <button
+              onClick={() => handleGameChoice("/blackjack")}
+              className="group glass-card p-4 text-left hover:border-primary/40 transition-all"
+            >
+              <div className="text-2xl mb-2">🃏</div>
+              <h3 className="font-serif text-white group-hover:text-primary transition-colors text-sm font-medium">Blackjack</h3>
+              <p className="text-[11px] text-muted-foreground mt-1">Hit, stand, or bust</p>
+            </button>
+          </div>
+
+          <button
+            onClick={handleDismiss}
+            className="text-xs text-muted-foreground hover:text-white/70 transition-colors mt-1 text-center"
+          >
+            No thanks, show me the portfolio
+          </button>
+        </DialogContent>
+      </Dialog>
       {/* Hero Section */}
       <div className="relative">
         <HeroParticles />
