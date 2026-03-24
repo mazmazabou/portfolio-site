@@ -408,26 +408,41 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* MENA Slides */}
-          <Link href="/mena-slides" className="block group">
-            <div className="glass-card p-6 h-full flex flex-col">
-              <div className="flex justify-between items-start mb-4">
-                <span className="text-xs font-mono text-muted-foreground">ECON 305</span>
-                <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-white/10 text-white/80 border border-white/20 rounded">Presentation · 18 slides</span>
-              </div>
-              <h3 className="text-lg font-serif mb-2 group-hover:text-white transition-colors">Growth Challenges in MENA</h3>
-              <p className="text-sm text-muted-foreground mb-4">Structural growth barriers across the MENA region.</p>
-              <div className="mt-auto flex flex-wrap justify-between items-end gap-2">
-                <div className="flex flex-wrap gap-1">
-                  {['MENA', 'Development Economics', 'Policy'].map(tag => (
-                    <span key={tag} className="text-[10px] text-muted-foreground bg-white/5 px-1.5 py-0.5 rounded">{tag}</span>
-                  ))}
+          {/* MENA Slides — centered in last row */}
+          <div className="lg:col-start-2">
+            <Link href="/mena-slides" className="block group">
+              <div className="glass-card p-6 h-full flex flex-col">
+                <div className="flex justify-between items-start mb-4">
+                  <span className="text-xs font-mono text-muted-foreground">ECON 305</span>
+                  <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-white/10 text-white/80 border border-white/20 rounded">Presentation · 18 slides</span>
                 </div>
-                <span className="text-[10px] text-muted-foreground italic">with Dev Kapashi</span>
+                <h3 className="text-lg font-serif mb-2 group-hover:text-white transition-colors">Growth Challenges in MENA</h3>
+                <p className="text-sm text-muted-foreground mb-4">Structural growth barriers across the MENA region.</p>
+                <div className="mt-auto flex flex-wrap justify-between items-end gap-2">
+                  <div className="flex flex-wrap gap-1">
+                    {['MENA', 'Development Economics', 'Policy'].map(tag => (
+                      <span key={tag} className="text-[10px] text-muted-foreground bg-white/5 px-1.5 py-0.5 rounded">{tag}</span>
+                    ))}
+                  </div>
+                  <span className="text-[10px] text-muted-foreground italic">with Dev Kapashi</span>
+                </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
+        </div>
+      </section>
 
+      {/* Games Section */}
+      <section className="py-16">
+        <div className="flex items-center gap-4 mb-12">
+          <div className="flex items-center gap-3">
+            <div className="w-[3px] h-6 bg-primary rounded-full"></div>
+            <h2 className="text-2xl font-serif flex items-center gap-2"><Gamepad2 size={22} className="text-primary" /> Playable Games</h2>
+          </div>
+          <div className="h-px bg-border flex-1"></div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
           {/* Connect 4 */}
           <Link href="/connect-4" className="block group">
             <div className="glass-card p-6 h-full flex flex-col">
