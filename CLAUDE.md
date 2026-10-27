@@ -15,16 +15,18 @@ Personal portfolio site for Mazen Abouelela (USC, Fall 2022 – Spring 2026). 10
 - Express 5.0.1 backend (serves static files only — no API endpoints used)
 - Drizzle ORM + Passport auth are scaffolded but UNUSED — ignore them
 
-## Design System (DO NOT BREAK)
+## Design System (DO NOT BREAK) — Oct 2026 redesign
 
-- **Background:** #0A0F1C (dark navy)
-- **Primary accent:** #D4A853 (gold/amber)
-- **Secondary accent:** #2DD4BF (teal)
-- **Text:** #F5F5F5 (white), #94A3B8 (muted slate for secondary)
-- **Cards:** Glassmorphism effect with subtle borders
-- **Patterns:** Ottoman zellige tile overlays
-- **Fonts:** Cormorant Garamond (headings), Inter (body), JetBrains Mono (code/data), Crimson Pro (editorial prose)
-- **Theme:** ALL DARK. The 404 page has a bug (bg-gray-50) — fix it to match.
+Replaced the old navy/gold/teal + four-font system (see REDESIGN_BRIEF.md).
+
+- **Theme:** warm light "paper". Tokens live in `client/src/index.css` — use `bg-background`, `text-foreground`, `bg-card`, `bg-muted`, `border-border`, `text-primary`, `text-secondary`. Do not hardcode hex in pages.
+- **Paper (background):** #F4EFE6 · **Card:** #FBF8F2 · **Muted:** #EAE3D6 · **Border:** #DDD3C2
+- **Ink (text):** #1D1A16 · **Muted text:** #6E655B
+- **Primary accent (brick):** #A8432A · **Secondary (Nile green):** #2F5D50 — the only two accents.
+- **Fonts (max two):** Newsreader (headings, bio prose) + Instrument Sans (UI/body). Code and data tables use the system mono stack via `font-mono` (no webfont).
+- **Exceptions:** notebook/code panels keep the dark slate "screen" chrome (#0F172A/#1E293B) because the R chart PNGs are rendered on that background. Blackjack table is green felt; Connect 4 board is ink.
+- **Hero:** `client/src/components/Hero.tsx` (word-reveal headline, floating photo stack, two counter-scrolling tickers). Photos: `client/public/images/about-*.jpg`.
+- **Profile links:** `client/src/lib/site.ts` (Instagram link renders only when `INSTAGRAM_URL` is set).
 
 ## File Structure
 
@@ -124,7 +126,7 @@ Replace these stubbed links with real URLs:
 
 ### Task 6: Cleanup
 
-- **404 page:** Fix `bg-gray-50` in not-found.tsx to use dark theme colors (#0A0F1C background, white/slate text)
+- **404 page:** Done in the Oct 2026 redesign (uses theme tokens).
 - **Server dead code:** The Express backend has unused Passport auth, Drizzle ORM, and an empty routes.ts. Either strip it all out (preferred — this is a static SPA) or leave it but don't let it cause confusion. If stripping, keep the Express server only for static file serving + Vite dev middleware.
 - **Replit artifacts:** Remove `.replit` config file and `attached_assets/` directory if present. Clean up any Replit-specific devDependencies from package.json that aren't needed for local/Vercel/Netlify deployment.
 - **Build test:** After any changes, run `npm run build` to verify no TypeScript or build errors.
@@ -172,3 +174,8 @@ The site is a client-side SPA. It can deploy to:
 - **GitHub Pages:** Needs a base path config in vite.config.ts
 
 The Express server is only needed for local dev. In production, this is static files + client-side routing.
+
+## Life OS Wiki
+Pending goals and notes tracked at:
+`/Users/mazenabouelela/Documents/Projects/orchestrator/wiki/projects/portfolio-site.md`
+Check this file when asked to execute pending items or review goals.
