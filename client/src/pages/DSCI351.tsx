@@ -14,10 +14,10 @@ export default function DSCI351() {
       <div className="max-w-4xl mx-auto">
         <div className="mb-12">
           <div className="mb-6">
-            <p className="font-mono text-sm text-muted-foreground mb-2">DSCI 351 — Data Systems, USC</p>
-            <h1 className="text-3xl md:text-5xl font-serif text-white mb-6">Dual-Database Inventory Management System</h1>
+            <p className="font-sans font-medium text-sm text-muted-foreground mb-2">DSCI 351 — Data Systems, USC</p>
+            <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-6">Dual-Database Inventory Management System</h1>
             <div className="flex gap-2">
-              <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-white/5 text-white/80 border border-white/10 rounded flex items-center w-fit">
+              <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-muted text-foreground/80 border border-border rounded flex items-center w-fit">
                 <FileText size={12} className="mr-1.5" /> Technical Report · 12 pages
               </span>
             </div>
@@ -30,7 +30,7 @@ export default function DSCI351() {
           </div>
         </div>
 
-        <div className="prose prose-invert prose-p:text-muted-foreground prose-p:leading-relaxed max-w-none mb-12">
+        <div className="prose-p:text-muted-foreground prose-p:leading-relaxed max-w-none mb-12">
           <p>
             A trader buys products from suppliers and sells them to retailers. The entire lifecycle — purchase, inventory, order, fulfillment — needs to be tracked in one place. This system does that, using two databases chosen for different access patterns: Redis for the buy-side (fast key-value reads on products and supplier data) and MongoDB for the sell-side (flexible document storage for orders, inventory, and retailer records).
           </p>
@@ -40,11 +40,11 @@ export default function DSCI351() {
         </div>
 
         {/* PDF Viewer */}
-        <iframe src="/pdfs/dsci-351-report.pdf" className="w-full h-[80vh] rounded-lg border border-white/10 mb-8" title="DSCI 351 Report PDF" />
+        <iframe src="/pdfs/dsci-351-report.pdf" className="w-full h-[80vh] rounded-lg border border-border mb-8" title="DSCI 351 Report PDF" />
 
         <div className="mb-8">
           <a href="/pdfs/dsci-351-report.pdf" download>
-            <Button variant="outline" className="border-border hover:bg-white/5">
+            <Button variant="outline" className="border-border hover:bg-muted">
               <Download className="mr-2 h-4 w-4" /> Download PDF
             </Button>
           </a>

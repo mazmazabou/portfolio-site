@@ -46,12 +46,6 @@ interface RouteMeta {
 }
 
 const routeMeta: Record<string, RouteMeta> = {
-  "ride-ops": {
-    title: "RideOps — Campus Transportation Ops Platform",
-    description:
-      "A white-labeled, multi-tenant SaaS platform for university accessibility transportation. Live in production with 4 campuses demo-ready.",
-    image: "/images/og/ride-ops.png",
-  },
   "mena-rising": {
     title: "MENA Rising — Weekly Economic Intelligence",
     description:
@@ -101,7 +95,7 @@ const routeMeta: Record<string, RouteMeta> = {
     image: "/images/og/mena-slides.png",
   },
   "connect-4": {
-    title: "Connect 4 — Playable C++ Port",
+    title: "Connect 4 — Playable C Port",
     description:
       "Terminal-based Connect 4 ported to the browser. Play against an AI with delta-vector win detection and a three-priority rule system. CSCI 103, USC.",
     image: "/images/og/connect-4.png",

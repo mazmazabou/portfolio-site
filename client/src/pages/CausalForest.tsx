@@ -444,18 +444,18 @@ export default function CausalForest() {
         <div className="mb-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
             <div>
-              <p className="font-mono text-sm text-primary mb-2">
+              <p className="font-sans font-medium text-sm text-primary mb-2">
                 ECON 460 — Econometrics & Machine Learning, USC
               </p>
-              <h1 className="text-3xl md:text-5xl font-serif text-white">
+              <h1 className="text-3xl md:text-5xl font-serif text-foreground">
                 Causal Forest — Effect of Financial Aid on Retention
               </h1>
             </div>
             <div className="shrink-0 flex gap-2">
-              <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-[#1E293B] text-white/80 border border-white/10 rounded">
+              <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-muted text-foreground/80 border border-border rounded">
                 R Markdown
               </span>
-              <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-[#1E293B] text-white/80 border border-white/10 rounded">
+              <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-muted text-foreground/80 border border-border rounded">
                 R
               </span>
             </div>
@@ -481,8 +481,8 @@ export default function CausalForest() {
         </div>
 
         {/* Content */}
-        <div className="prose prose-invert prose-p:text-muted-foreground prose-p:leading-relaxed max-w-none mb-16">
-          <p className="text-lg text-white/90">
+        <div className="prose-p:text-muted-foreground prose-p:leading-relaxed max-w-none mb-16">
+          <p className="text-lg text-foreground/90">
             This project uses causal forests (Athey & Imbens, 2018) to estimate
             heterogeneous treatment effects of high financial aid on student
             retention across ~1,000 U.S. universities. Built on College

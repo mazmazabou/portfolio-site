@@ -1,6 +1,7 @@
 import { Link, useLocation } from "wouter";
-import { Menu, X, Github, Linkedin, ChevronDown, Gamepad2 } from "lucide-react";
+import { Menu, X, Github, Linkedin, Instagram, ChevronDown, Gamepad2 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import { GITHUB_URL, LINKEDIN_URL, INSTAGRAM_URL, EMAIL, SOFTSAID_URL } from "@/lib/site";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
@@ -44,8 +45,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Navigation */}
       <header className="fixed top-0 w-full z-50 glass-panel">
         <div className="max-w-[1100px] mx-auto px-6 h-20 flex items-center justify-between">
-          <Link href="/" className="font-serif text-xl font-medium tracking-wide">
-            MAZEN
+          <Link href="/" className="font-serif text-2xl font-medium tracking-tight">
+            Mazen<span className="md:hidden lg:inline"> Abouelela</span><span className="text-primary">.</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -75,17 +76,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             >
               <button
                 onClick={() => toggleDropdown('projects')}
-                className={`flex items-center gap-1 text-sm hover:text-primary transition-colors ${(location === '/ride-ops' || location === '/mena-rising') ? 'text-primary' : 'text-foreground'}`}
+                className={`flex items-center gap-1 text-sm hover:text-primary transition-colors ${location === '/mena-rising' ? 'text-primary' : 'text-foreground'}`}
               >
                 Projects <ChevronDown size={14} className={`opacity-50 transition-transform ${openDropdown === 'projects' ? 'rotate-180' : ''}`} />
               </button>
 
               {openDropdown === 'projects' && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-[#0A0F1C] border border-border rounded-lg shadow-xl overflow-hidden py-1">
-                  <Link href="/ride-ops" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
-                    RideOps
-                  </Link>
-                  <Link href="/mena-rising" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
+                <div className="absolute top-full left-0 mt-2 w-48 bg-card border border-border rounded-lg shadow-[0_18px_40px_-20px_rgba(29,26,22,0.35)] overflow-hidden py-1">
+                  <a href={SOFTSAID_URL} target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm hover:bg-muted hover:text-primary transition-colors">
+                    Softsaid ↗
+                  </a>
+                  <Link href="/mena-rising" className="block px-4 py-2 text-sm hover:bg-muted hover:text-primary transition-colors">
                     MENA Rising
                   </Link>
                 </div>
@@ -106,26 +107,26 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </button>
 
               {openDropdown === 'coursework' && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-[#0A0F1C] border border-border rounded-lg shadow-xl overflow-hidden py-1">
-                  <Link href="/fama-french" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
+                <div className="absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded-lg shadow-[0_18px_40px_-20px_rgba(29,26,22,0.35)] overflow-hidden py-1">
+                  <Link href="/fama-french" className="block px-4 py-2 text-sm hover:bg-muted hover:text-primary transition-colors">
                     Fama-French
                   </Link>
-                  <Link href="/al-ard" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
+                  <Link href="/al-ard" className="block px-4 py-2 text-sm hover:bg-muted hover:text-primary transition-colors">
                     Al-Ard
                   </Link>
-                  <Link href="/microsoft-tax" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
+                  <Link href="/microsoft-tax" className="block px-4 py-2 text-sm hover:bg-muted hover:text-primary transition-colors">
                     Microsoft Tax
                   </Link>
-                  <Link href="/dsci-351" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
+                  <Link href="/dsci-351" className="block px-4 py-2 text-sm hover:bg-muted hover:text-primary transition-colors">
                     DSCI 351
                   </Link>
-                  <Link href="/mena-slides" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
+                  <Link href="/mena-slides" className="block px-4 py-2 text-sm hover:bg-muted hover:text-primary transition-colors">
                     MENA Slides
                   </Link>
-                  <Link href="/causal-forest" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
+                  <Link href="/causal-forest" className="block px-4 py-2 text-sm hover:bg-muted hover:text-primary transition-colors">
                     Causal Forest
                   </Link>
-                  <Link href="/pca-voting" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
+                  <Link href="/pca-voting" className="block px-4 py-2 text-sm hover:bg-muted hover:text-primary transition-colors">
                     PCA & Classification
                   </Link>
                 </div>
@@ -146,11 +147,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </button>
 
               {openDropdown === 'games' && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-[#0A0F1C] border border-border rounded-lg shadow-xl overflow-hidden py-1">
-                  <Link href="/connect-4" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
+                <div className="absolute top-full left-0 mt-2 w-48 bg-card border border-border rounded-lg shadow-[0_18px_40px_-20px_rgba(29,26,22,0.35)] overflow-hidden py-1">
+                  <Link href="/connect-4" className="block px-4 py-2 text-sm hover:bg-muted hover:text-primary transition-colors">
                     Connect 4
                   </Link>
-                  <Link href="/blackjack" className="block px-4 py-2 text-sm hover:bg-white/5 hover:text-primary transition-colors">
+                  <Link href="/blackjack" className="block px-4 py-2 text-sm hover:bg-muted hover:text-primary transition-colors">
                     Blackjack
                   </Link>
                 </div>
@@ -160,12 +161,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="w-px h-4 bg-border ml-2 mr-2"></div>
 
             <div className="flex items-center gap-4">
-              <a href="https://github.com/mazmazabou" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+              <a href={GITHUB_URL} className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                 <Github size={18} />
               </a>
-              <a href="https://www.linkedin.com/in/mazen-abouelela-88a559205/" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+              <a href={LINKEDIN_URL} aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                 <Linkedin size={18} />
               </a>
+              {INSTAGRAM_URL && (
+                <a href={INSTAGRAM_URL} aria-label="Instagram" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                  <Instagram size={18} />
+                </a>
+              )}
             </div>
           </nav>
 
@@ -180,7 +186,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Mobile Nav */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-[#0A0F1C] border-b border-border absolute top-full left-0 w-full animate-in slide-in-from-top-2">
+          <div className="md:hidden bg-background border-b border-border absolute top-full left-0 w-full animate-in slide-in-from-top-2">
             <nav className="flex flex-col px-6 py-4 gap-4">
               <Link href="/" className="text-lg font-medium">Home</Link>
 
@@ -200,15 +206,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
               <div className="py-2">
                 <div className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">Projects</div>
-                <div className="flex flex-col gap-3 pl-4 border-l border-white/10">
-                  <Link href="/ride-ops" className="text-lg">RideOps</Link>
+                <div className="flex flex-col gap-3 pl-4 border-l border-border">
+                  <a href={SOFTSAID_URL} target="_blank" rel="noopener noreferrer" className="text-lg">Softsaid ↗</a>
                   <Link href="/mena-rising" className="text-lg">MENA Rising</Link>
                 </div>
               </div>
 
               <div className="py-2">
                 <div className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">Coursework</div>
-                <div className="flex flex-col gap-3 pl-4 border-l border-white/10">
+                <div className="flex flex-col gap-3 pl-4 border-l border-border">
                   <Link href="/fama-french" className="text-lg">Fama-French</Link>
                   <Link href="/al-ard" className="text-lg">Al-Ard</Link>
                   <Link href="/microsoft-tax" className="text-lg">Microsoft Tax</Link>
@@ -221,15 +227,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
               <div className="py-2">
                 <div className="text-sm text-muted-foreground mb-2 uppercase tracking-wider flex items-center gap-1.5"><Gamepad2 size={12} /> Games</div>
-                <div className="flex flex-col gap-3 pl-4 border-l border-white/10">
+                <div className="flex flex-col gap-3 pl-4 border-l border-border">
                   <Link href="/connect-4" className="text-lg">Connect 4</Link>
                   <Link href="/blackjack" className="text-lg">Blackjack</Link>
                 </div>
               </div>
 
-              <div className="flex gap-6 mt-4 pt-4 border-t border-white/10">
-                <a href="https://github.com/mazmazabou" className="text-foreground" target="_blank" rel="noopener noreferrer"><Github size={24} /></a>
-                <a href="https://www.linkedin.com/in/mazen-abouelela-88a559205/" className="text-foreground" target="_blank" rel="noopener noreferrer"><Linkedin size={24} /></a>
+              <div className="flex gap-6 mt-4 pt-4 border-t border-border">
+                <a href={GITHUB_URL} className="text-foreground" target="_blank" rel="noopener noreferrer"><Github size={24} /></a>
+                <a href={LINKEDIN_URL} aria-label="LinkedIn" className="text-foreground" target="_blank" rel="noopener noreferrer"><Linkedin size={24} /></a>
+                {INSTAGRAM_URL && <a href={INSTAGRAM_URL} aria-label="Instagram" className="text-foreground" target="_blank" rel="noopener noreferrer"><Instagram size={24} /></a>}
               </div>
             </nav>
           </div>
@@ -247,20 +254,25 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <footer className="border-t border-border mt-24 py-12">
         <div className="max-w-[1100px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-sm text-muted-foreground">
-            Built by Mazen Abouelela · USC 2026
+            Built by Mazen Abouelela · Atlanta, GA
           </div>
-          <div className="flex items-center gap-6">
-            <span className="text-sm text-muted-foreground">abouelelamazen@gmail.com</span>
+          <div className="flex flex-wrap justify-center items-center gap-6">
+            <a href={`mailto:${EMAIL}`} className="text-sm text-muted-foreground hover:text-primary transition-colors">{EMAIL}</a>
             <a href="/pdfs/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-primary transition-colors">
               Resume
             </a>
             <div className="flex gap-4">
-              <a href="https://github.com/mazmazabou" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+              <a href={GITHUB_URL} aria-label="GitHub" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                 <Github size={18} />
               </a>
-              <a href="https://www.linkedin.com/in/mazen-abouelela-88a559205/" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+              <a href={LINKEDIN_URL} aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                 <Linkedin size={18} />
               </a>
+              {INSTAGRAM_URL && (
+                <a href={INSTAGRAM_URL} aria-label="Instagram" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                  <Instagram size={18} />
+                </a>
+              )}
             </div>
           </div>
         </div>

@@ -10,7 +10,6 @@ import Layout from "./components/layout/Layout";
 
 // Pages
 import Home from "./pages/Home";
-import RideOps from "./pages/RideOps";
 import MENARising from "./pages/MENARising";
 import FamaFrench from "./pages/FamaFrench";
 
@@ -29,7 +28,6 @@ function Router() {
     <Layout>
       <Switch>
         <Route path="/" component={Home} />
-        <Route path="/ride-ops" component={RideOps} />
         <Route path="/mena-rising" component={MENARising} />
         <Route path="/fama-french" component={FamaFrench} />
 

@@ -46,24 +46,24 @@ function PlayingCard({
         className="w-[72px] h-[104px] sm:w-[88px] sm:h-[128px] rounded-lg flex flex-col justify-between p-1.5 sm:p-2 select-none"
         style={{
           background: faceDown
-            ? "linear-gradient(135deg, #1a2744 0%, #162036 100%)"
-            : "linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%)",
+            ? "linear-gradient(135deg, #A8432A 0%, #8A3520 100%)"
+            : "linear-gradient(180deg, #FFFDF8 0%, #F1EADD 100%)",
           boxShadow:
             "0 2px 8px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.08)",
         }}
       >
         {faceDown ? (
-          // Card back — subtle Ottoman-inspired pattern
-          <div className="absolute inset-[4px] rounded border border-primary/20 flex items-center justify-center overflow-hidden">
+          // Card back — brick with a fine crosshatch
+          <div className="absolute inset-[4px] rounded border border-white/30 flex items-center justify-center overflow-hidden">
             <div
               className="absolute inset-0 opacity-10"
               style={{
-                backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(212,168,83,0.3) 4px, rgba(212,168,83,0.3) 5px),
-                  repeating-linear-gradient(-45deg, transparent, transparent 4px, rgba(212,168,83,0.3) 4px, rgba(212,168,83,0.3) 5px)`,
+                backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(251,248,242,0.6) 4px, rgba(251,248,242,0.6) 5px),
+                  repeating-linear-gradient(-45deg, transparent, transparent 4px, rgba(251,248,242,0.6) 4px, rgba(251,248,242,0.6) 5px)`,
               }}
             />
-            <div className="w-6 h-6 sm:w-8 sm:h-8 border border-primary/30 rounded-full flex items-center justify-center">
-              <div className="w-3 h-3 sm:w-4 sm:h-4 border border-primary/20 rounded-full" />
+            <div className="w-6 h-6 sm:w-8 sm:h-8 border border-white/50 rounded-full flex items-center justify-center">
+              <div className="w-3 h-3 sm:w-4 sm:h-4 border border-white/40 rounded-full" />
             </div>
           </div>
         ) : (
@@ -117,12 +117,12 @@ const resultConfig: Record<
   Exclude<GameResult, "playing">,
   { label: string; color: string }
 > = {
-  blackjack: { label: "Blackjack!", color: "text-primary" },
-  player_win: { label: "You Win!", color: "text-emerald-400" },
-  dealer_bust: { label: "Dealer Busts!", color: "text-emerald-400" },
-  player_bust: { label: "Bust!", color: "text-red-400" },
-  dealer_win: { label: "Dealer Wins", color: "text-red-400" },
-  push: { label: "Push", color: "text-muted-foreground" },
+  blackjack: { label: "Blackjack!", color: "text-amber-200" },
+  player_win: { label: "You Win!", color: "text-emerald-200" },
+  dealer_bust: { label: "Dealer Busts!", color: "text-emerald-200" },
+  player_bust: { label: "Bust!", color: "text-red-200" },
+  dealer_win: { label: "Dealer Wins", color: "text-red-200" },
+  push: { label: "Push", color: "text-white/70" },
 };
 
 // ---- Main Component ----
@@ -166,10 +166,10 @@ export default function Blackjack() {
         <div className="mb-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
             <div>
-              <p className="font-mono text-sm text-primary mb-2">
+              <p className="font-sans font-medium text-sm text-primary mb-2">
                 CSCI 103 — Introduction to Computer Science, USC
               </p>
-              <h1 className="text-3xl md:text-5xl font-serif text-white">
+              <h1 className="text-3xl md:text-5xl font-serif text-foreground">
                 Blackjack (Twenty-One)
               </h1>
             </div>
@@ -195,7 +195,7 @@ export default function Blackjack() {
             ))}
           </div>
 
-          <div className="prose prose-invert prose-p:text-muted-foreground prose-p:leading-relaxed max-w-none">
+          <div className="prose-p:text-muted-foreground prose-p:leading-relaxed max-w-none">
             <p>
               A full Blackjack game ported from a CSCI 103 C++ assignment. The
               deck uses Fisher-Yates (Durstenfeld variant) for shuffling, Aces
@@ -211,27 +211,27 @@ export default function Blackjack() {
           className="relative rounded-xl p-6 md:p-10 mb-12"
           style={{
             background:
-              "linear-gradient(180deg, #0d1829 0%, #111d32 50%, #0d1829 100%)",
+              "radial-gradient(ellipse at 50% 35%, #2F5D50 0%, #234A3F 55%, #1B3A31 100%)",
             boxShadow:
-              "0 0 0 1px rgba(255,255,255,0.06), 0 20px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.03)",
+              "0 0 0 1px rgba(255,255,255,0.06), 0 24px 60px -20px rgba(29,26,22,0.55), inset 0 1px 0 rgba(255,255,255,0.03)",
           }}
         >
           {/* Felt texture overlay */}
           <div
-            className="absolute inset-0 rounded-xl opacity-[0.03] pointer-events-none"
+            className="absolute inset-0 rounded-xl opacity-[0.08] pointer-events-none"
             style={{
               backgroundImage:
-                "radial-gradient(circle at 50% 50%, rgba(45,212,191,0.15) 0%, transparent 70%)",
+                "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.25) 0%, transparent 70%)",
             }}
           />
 
           {/* Dealer Section */}
           <div className="relative mb-10">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
+              <span className="text-xs font-sans font-medium uppercase tracking-wider text-white/60">
                 Dealer
               </span>
-              <div className="h-px bg-white/5 flex-1" />
+              <div className="h-px bg-white/15 flex-1" />
               <AnimatePresence mode="wait">
                 {showDealerCards ? (
                   <motion.span
@@ -243,7 +243,7 @@ export default function Blackjack() {
                     {dealerScore}
                   </motion.span>
                 ) : (
-                  <span className="text-sm font-mono text-muted-foreground/50">
+                  <span className="text-sm font-mono text-white/40">
                     ?
                   </span>
                 )}
@@ -280,7 +280,7 @@ export default function Blackjack() {
                     ]?.label
                   }
                 </span>
-                <span className="text-xs font-mono text-muted-foreground mt-2">
+                <span className="text-xs font-mono text-white/60 mt-2">
                   {playerScore} vs {dealerScore}
                 </span>
               </motion.div>
@@ -289,18 +289,18 @@ export default function Blackjack() {
 
           {/* Divider */}
           <div className="flex items-center gap-4 my-6">
-            <div className="h-px bg-white/5 flex-1" />
-            <div className="w-1.5 h-1.5 rounded-full bg-primary/30" />
-            <div className="h-px bg-white/5 flex-1" />
+            <div className="h-px bg-white/15 flex-1" />
+            <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
+            <div className="h-px bg-white/15 flex-1" />
           </div>
 
           {/* Player Section */}
           <div className="relative">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs font-mono uppercase tracking-wider text-white/70">
+              <span className="text-xs font-sans font-medium uppercase tracking-wider text-white/70">
                 Your Hand
               </span>
-              <div className="h-px bg-white/5 flex-1" />
+              <div className="h-px bg-white/15 flex-1" />
               <span className="text-sm font-mono text-white">
                 {playerScore}
               </span>
@@ -322,14 +322,14 @@ export default function Blackjack() {
                 <>
                   <Button
                     onClick={hit}
-                    className="bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 rounded-none font-medium text-sm"
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 rounded-full font-medium text-sm"
                   >
                     Hit
                   </Button>
                   <Button
                     onClick={stay}
                     variant="outline"
-                    className="border-border text-foreground hover:bg-white/5 h-11 px-8 rounded-none text-sm"
+                    className="bg-transparent border-white/40 text-white hover:bg-white/10 hover:text-white h-11 px-8 rounded-full text-sm"
                   >
                     Stay
                   </Button>
@@ -337,7 +337,7 @@ export default function Blackjack() {
               ) : (
                 <Button
                   onClick={newGame}
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 rounded-none font-medium text-sm"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 rounded-full font-medium text-sm"
                 >
                   <RotateCcw size={14} className="mr-2" /> Deal Again
                 </Button>
@@ -346,7 +346,7 @@ export default function Blackjack() {
           </div>
 
           {/* Game counter */}
-          <div className="absolute top-4 right-4 text-[10px] font-mono text-muted-foreground/40">
+          <div className="absolute top-4 right-4 text-[10px] font-mono text-white/40">
             #{gameNum}
           </div>
         </div>
@@ -357,7 +357,7 @@ export default function Blackjack() {
             <div className="flex items-center gap-4 py-4 border-t border-border group cursor-pointer">
               <div className="flex items-center gap-3">
                 <div className="w-[3px] h-5 bg-primary rounded-full" />
-                <h2 className="text-lg font-serif text-white/90">
+                <h2 className="text-lg font-serif text-foreground/90">
                   Under the Hood
                 </h2>
               </div>

@@ -147,10 +147,10 @@ export default function Connect4() {
   };
 
   const statusColor = {
-    player_turn: "text-red-400",
-    ai_thinking: "text-yellow-400",
+    player_turn: "text-red-700",
+    ai_thinking: "text-amber-700",
     player_win: "text-primary",
-    ai_win: "text-yellow-400",
+    ai_win: "text-amber-700",
     draw: "text-muted-foreground",
   };
 
@@ -170,21 +170,21 @@ export default function Connect4() {
         <div className="mb-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
             <div>
-              <p className="font-mono text-sm text-primary mb-2">
+              <p className="font-sans font-medium text-sm text-primary mb-2">
                 CSCI 103 — Introduction to Computer Science, USC
               </p>
-              <h1 className="text-3xl md:text-5xl font-serif text-white">
+              <h1 className="text-3xl md:text-5xl font-serif text-foreground">
                 Connect 4
               </h1>
             </div>
             <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded shrink-0 w-fit h-fit">
-              C++ &middot; Playable Demo
+              C &middot; Playable Demo
             </span>
           </div>
 
           <div className="flex flex-wrap gap-2 mb-8">
             {[
-              "C++",
+              "C",
               "Game AI",
               "Dynamic Memory",
               "Win Detection",
@@ -199,9 +199,9 @@ export default function Connect4() {
             ))}
           </div>
 
-          <div className="prose prose-invert prose-p:text-muted-foreground prose-p:leading-relaxed max-w-none">
+          <div className="prose-p:text-muted-foreground prose-p:leading-relaxed max-w-none">
             <p>
-              A terminal-based Connect 4 game ported from C++ to the browser.
+              A terminal-based Connect 4 game ported from C to the browser.
               The AI uses a three-priority rule system: first it scans for
               blocking moves, then winning moves, then falls back to positional
               play. No minimax, no search trees — just clean
@@ -232,7 +232,7 @@ export default function Connect4() {
               {status === "ai_thinking" && (
                 <Cpu
                   size={14}
-                  className="text-yellow-400 animate-pulse"
+                  className="text-amber-700 animate-pulse"
                 />
               )}
             </div>
@@ -240,7 +240,7 @@ export default function Connect4() {
               variant="ghost"
               size="sm"
               onClick={resetGame}
-              className="text-xs text-muted-foreground hover:text-white gap-1.5"
+              className="text-xs text-muted-foreground hover:text-foreground gap-1.5"
             >
               <RotateCcw size={12} /> New Game
             </Button>
@@ -280,9 +280,9 @@ export default function Connect4() {
             className="relative rounded-xl p-2 md:p-3 max-w-[490px] w-full"
             style={{
               background:
-                "linear-gradient(180deg, #1a2744 0%, #162036 100%)",
+                "linear-gradient(180deg, #2A2520 0%, #1D1A16 100%)",
               boxShadow:
-                "0 0 0 1px rgba(255,255,255,0.06), 0 20px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04)",
+                "0 0 0 1px rgba(255,255,255,0.06), 0 24px 60px -20px rgba(29,26,22,0.55), inset 0 1px 0 rgba(255,255,255,0.04)",
             }}
           >
             <div
@@ -317,9 +317,9 @@ export default function Connect4() {
                         className="absolute inset-[3px] md:inset-1 rounded-full"
                         style={{
                           background:
-                            "radial-gradient(ellipse at 30% 30%, rgba(10,15,28,0.95) 0%, rgba(6,10,20,1) 100%)",
+                            "radial-gradient(ellipse at 30% 30%, #EFE8DB 0%, #E2D9C8 100%)",
                           boxShadow:
-                            "inset 0 2px 6px rgba(0,0,0,0.6), inset 0 -1px 2px rgba(255,255,255,0.03)",
+                            "inset 0 3px 6px rgba(29,26,22,0.45)",
                         }}
                       />
 
@@ -404,7 +404,7 @@ export default function Connect4() {
           </div>
 
           {/* Stats */}
-          <div className="flex gap-6 mt-6 text-xs font-mono text-muted-foreground">
+          <div className="flex gap-6 mt-6 text-xs font-sans font-medium text-muted-foreground">
             <span>Moves: {moves}</span>
             <span>Game #{gameNum}</span>
           </div>
@@ -419,7 +419,7 @@ export default function Connect4() {
               >
                 <Button
                   onClick={resetGame}
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-6 rounded-none font-medium"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-6 rounded-full font-medium"
                 >
                   <RotateCcw size={14} className="mr-2" /> Play Again
                 </Button>
@@ -434,7 +434,7 @@ export default function Connect4() {
             <div className="flex items-center gap-4 py-4 border-t border-border group cursor-pointer">
               <div className="flex items-center gap-3">
                 <div className="w-[3px] h-5 bg-primary rounded-full" />
-                <h2 className="text-lg font-serif text-white/90">
+                <h2 className="text-lg font-serif text-foreground/90">
                   Under the Hood
                 </h2>
               </div>
@@ -448,7 +448,7 @@ export default function Connect4() {
           <CollapsibleContent>
             <div className="space-y-8 pb-8">
               <p className="text-sm text-muted-foreground leading-relaxed">
-                The browser version is a direct port of the original C++ code
+                The browser version is a direct port of the original C code
                 from CSCI 103. Below are the two core algorithms — the
                 delta-vector win checker and the three-priority AI — exactly as
                 they were written.
@@ -469,7 +469,7 @@ export default function Connect4() {
                 </p>
                 <div className="rounded-lg overflow-hidden border border-[#334155] bg-[#0F172A]">
                   <div className="bg-[#1E293B] px-4 py-2 text-xs font-mono text-muted-foreground border-b border-[#334155]">
-                    c4lib.cpp — hasWon()
+                    c4lib.c — hasWon()
                   </div>
                   <pre className="p-4 font-mono text-xs text-[#E2E8F0] overflow-x-auto leading-relaxed">
                     <code>{`bool hasWon(
@@ -536,7 +536,7 @@ export default function Connect4() {
                 </p>
                 <div className="rounded-lg overflow-hidden border border-[#334155] bg-[#0F172A]">
                   <div className="bg-[#1E293B] px-4 py-2 text-xs font-mono text-muted-foreground border-b border-[#334155]">
-                    c4lib.cpp — getUserAIInput()
+                    c4lib.c — getUserAIInput()
                   </div>
                   <pre className="p-4 font-mono text-xs text-[#E2E8F0] overflow-x-auto leading-relaxed">
                     <code>{`bool getUserAIInput(BoardValue** board,

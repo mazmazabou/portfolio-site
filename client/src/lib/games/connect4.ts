@@ -1,5 +1,5 @@
 /**
- * Connect 4 — Pure game logic ported from c4lib.cpp / c4lib.h
+ * Connect 4 — Pure game logic ported from c4lib.c / c4lib.h
  * Original: CSCI 103, USC — Mazen Abouelela
  *
  * Board is stored row-major: board[row][col], row 0 = bottom.
@@ -21,7 +21,7 @@ export function createBoard(rows: number, cols: number): Board {
 
 /**
  * Returns the lowest BLANK row in a column, or -1 if full.
- * Direct port of findYValue from c4lib.cpp.
+ * Direct port of findYValue from c4lib.c.
  */
 export function findYValue(board: Board, rows: number, col: number): number {
   for (let i = 0; i < rows; i++) {
@@ -54,7 +54,7 @@ export function dropPiece(
 const playerToValue: BoardValue[] = [BoardValue.RED, BoardValue.YELLOW];
 
 /**
- * Delta-vector win detection — exact port of hasWon from c4lib.cpp.
+ * Delta-vector win detection — exact port of hasWon from c4lib.c.
  * Checks 4 directions from the last placed piece (sy, sx).
  */
 export function hasWon(
@@ -117,7 +117,7 @@ export function hasWon(
 }
 
 /**
- * Board-full draw check — exact port of isDraw from c4lib.cpp.
+ * Board-full draw check — exact port of isDraw from c4lib.c.
  */
 export function isDraw(board: Board, rows: number, cols: number): boolean {
   for (let i = 0; i < rows; i++) {
@@ -190,14 +190,14 @@ export function getWinningCells(
 }
 
 /**
- * AI move selection — exact port of getUserAIInput from c4lib.cpp.
+ * AI move selection — exact port of getUserAIInput from c4lib.c.
  *
  * Three-priority system:
  *   1. Block opponent from winning
  *   2. Take winning move for self
  *   3. Fallback: first available column
  *
- * NOTE: The original C++ code checks block FIRST (priority 1), then
+ * NOTE: The original C code checks block FIRST (priority 1), then
  * checks win for self (priority 2). This means the AI will sometimes
  * block instead of winning. This is ported exactly as written.
  */

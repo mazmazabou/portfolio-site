@@ -32,7 +32,6 @@ interface RouteConfig {
 
 const routes: RouteConfig[] = [
   { route: "/", selector: null },
-  { route: "/ride-ops", selector: null },
   { route: "/mena-rising", selector: null },
   { route: "/fama-french", selector: null },
   { route: "/causal-forest", selector: null },

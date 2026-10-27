@@ -1,21 +1,19 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle } from "lucide-react";
+import { Link } from "wouter";
+import { ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-[#0A0F1C]">
-      <Card className="w-full max-w-md mx-4 bg-white/5 border-white/10">
-        <CardContent className="pt-6">
-          <div className="flex mb-4 gap-2">
-            <AlertCircle className="h-8 w-8 text-red-500" />
-            <h1 className="text-2xl font-bold text-white">404 Page Not Found</h1>
-          </div>
-
-          <p className="mt-4 text-sm text-slate-400">
-            This page doesn't exist. Head back to the portfolio.
-          </p>
-        </CardContent>
-      </Card>
+    <div className="min-h-[70vh] w-full flex items-center justify-center px-6">
+      <div className="max-w-md text-center">
+        <p className="text-sm text-muted-foreground mb-4">404</p>
+        <h1 className="text-5xl font-serif font-normal mb-4">Nothing here.</h1>
+        <p className="text-muted-foreground mb-8">
+          This page doesn't exist. Head back to the portfolio.
+        </p>
+        <Link href="/" className="inline-flex items-center gap-2 rounded-full bg-foreground text-background h-11 px-6 text-sm font-medium">
+          <ArrowLeft size={16} /> Back home
+        </Link>
+      </div>
     </div>
   );
 }

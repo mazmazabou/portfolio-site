@@ -14,10 +14,10 @@ export default function MicrosoftTax() {
       <div className="max-w-4xl mx-auto">
         <div className="mb-12">
           <div className="mb-6">
-            <p className="font-mono text-sm text-muted-foreground mb-2">WRIT 340 — Professional Writing, USC</p>
-            <h1 className="text-3xl md:text-5xl font-serif text-white mb-6">Microsoft Ireland Tax Analysis</h1>
+            <p className="font-sans font-medium text-sm text-muted-foreground mb-2">WRIT 340 — Professional Writing, USC</p>
+            <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-6">Microsoft Ireland Tax Analysis</h1>
             <div className="flex gap-2">
-              <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-white/5 text-white/80 border border-white/10 rounded flex items-center w-fit">
+              <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-muted text-foreground/80 border border-border rounded flex items-center w-fit">
                 <FileText size={12} className="mr-1.5" /> Business Memo
               </span>
             </div>
@@ -34,13 +34,13 @@ export default function MicrosoftTax() {
               $858M
             </div>
             <div className="h-px w-12 md:w-px md:h-12 bg-primary/30 hidden md:block"></div>
-            <div className="text-primary/80 font-mono text-sm uppercase tracking-wider max-w-xs leading-relaxed">
+            <div className="text-primary/80 font-sans font-medium text-sm uppercase tracking-wider max-w-xs leading-relaxed">
               Estimated single-year tax savings from one jurisdiction
             </div>
           </div>
         </div>
 
-        <div className="prose prose-invert prose-p:text-muted-foreground prose-p:leading-relaxed max-w-none mb-12">
+        <div className="prose-p:text-muted-foreground prose-p:leading-relaxed max-w-none mb-12">
           <p>
             This is a professional business memo analyzing Microsoft's use of Ireland as a tax-efficient jurisdiction — written from the perspective of a financial analyst briefing an executive on the strategic implications.
           </p>
@@ -53,11 +53,11 @@ export default function MicrosoftTax() {
         </div>
 
         {/* PDF Viewer */}
-        <iframe src="/pdfs/microsoft-tax-memo.pdf" className="w-full h-[80vh] rounded-lg border border-white/10 mb-8" title="Microsoft Ireland Tax Memo PDF" />
+        <iframe src="/pdfs/microsoft-tax-memo.pdf" className="w-full h-[80vh] rounded-lg border border-border mb-8" title="Microsoft Ireland Tax Memo PDF" />
 
         <div className="mb-8">
           <a href="/pdfs/microsoft-tax-memo.pdf" download>
-            <Button variant="outline" className="border-border hover:bg-white/5">
+            <Button variant="outline" className="border-border hover:bg-muted">
               <Download className="mr-2 h-4 w-4" /> Download PDF
             </Button>
           </a>

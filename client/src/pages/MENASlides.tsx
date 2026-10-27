@@ -13,10 +13,10 @@ export default function MENASlides() {
       <div className="max-w-5xl mx-auto">
         <div className="mb-12">
           <div className="mb-6">
-            <p className="font-mono text-sm text-muted-foreground mb-2">ECON 305 — Development Economics, USC</p>
-            <h1 className="text-3xl md:text-5xl font-serif text-white mb-6">Growth Challenges in MENA</h1>
+            <p className="font-sans font-medium text-sm text-muted-foreground mb-2">ECON 305 — Development Economics, USC</p>
+            <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-6">Growth Challenges in MENA</h1>
             <div className="flex gap-2">
-              <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-white/5 text-white/80 border border-white/10 rounded flex items-center w-fit">
+              <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-muted text-foreground/80 border border-border rounded flex items-center w-fit">
                 <MonitorPlay size={12} className="mr-1.5" /> Presentation · 18 slides
               </span>
             </div>
@@ -29,8 +29,8 @@ export default function MENASlides() {
           </div>
         </div>
 
-        <div className="max-w-3xl prose prose-invert prose-p:text-muted-foreground prose-p:leading-relaxed max-w-none mb-16">
-          <p className="text-xl font-serif italic text-white/90">
+        <div className="max-w-3xl prose-p:text-muted-foreground prose-p:leading-relaxed max-w-none mb-16">
+          <p className="text-xl font-serif italic text-foreground/90">
             Academic context for MENA Rising. The same region, approached from a development economics angle rather than a data journalism one.
           </p>
           <p>
@@ -49,11 +49,11 @@ export default function MENASlides() {
                 key={i}
                 src={`/images/slides/slide-${i}.png`}
                 alt={`MENA Growth Challenges — Slide ${i}`}
-                className="aspect-[16/9] w-full object-cover rounded border border-white/10"
+                className="aspect-[16/9] w-full object-cover rounded border border-border"
               />
             ))}
           </div>
-          <p className="text-xs font-mono text-muted-foreground text-center uppercase tracking-wider">
+          <p className="text-xs font-sans font-medium text-muted-foreground text-center uppercase tracking-wider">
             Selected Slides — with Dev Kapashi
           </p>
         </div>

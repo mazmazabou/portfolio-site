@@ -14,10 +14,10 @@ export default function AlArd() {
       <div className="max-w-3xl mx-auto">
         <div className="mb-12">
           <div className="mb-6">
-            <p className="font-mono text-sm text-muted-foreground mb-2">MDES 401 — Media Studies, USC</p>
-            <h1 className="text-3xl md:text-5xl font-serif text-white mb-6">Al-Ard — A Reading of Youssef Chahine's Film</h1>
+            <p className="font-sans font-medium text-sm text-muted-foreground mb-2">MDES 401 — Media Studies, USC</p>
+            <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-6">Al-Ard — A Reading of Youssef Chahine's Film</h1>
             <div className="flex gap-2">
-              <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-white/5 text-white/80 border border-white/10 rounded flex items-center w-fit">
+              <span className="text-[10px] uppercase tracking-wider px-2 py-1 bg-muted text-foreground/80 border border-border rounded flex items-center w-fit">
                 <FileText size={12} className="mr-1.5" /> Long-form Essay · 8 pages
               </span>
             </div>
@@ -30,7 +30,7 @@ export default function AlArd() {
           </div>
         </div>
 
-        <div className="prose prose-invert prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg font-editorial max-w-none mb-12">
+        <div className="prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg font-serif max-w-none mb-12">
           <p>
             <span className="italic">Al-Ard</span> — The Earth — is a 1969 Egyptian film by Youssef Chahine. It's set against Nasser's agrarian reform policies and follows a village community fighting to hold on to its land. The film uses landscape as a political argument: soil, fields, and geography aren't backdrop — they're the subject.
           </p>
@@ -49,11 +49,11 @@ export default function AlArd() {
         </div>
 
         {/* PDF Viewer */}
-        <iframe src="/pdfs/al-ard-review.pdf" className="w-full h-[80vh] rounded-lg border border-white/10 mb-8" title="Al-Ard Film Review PDF" />
+        <iframe src="/pdfs/al-ard-review.pdf" className="w-full h-[80vh] rounded-lg border border-border mb-8" title="Al-Ard Film Review PDF" />
 
         <div className="mb-8">
           <a href="/pdfs/al-ard-review.pdf" download>
-            <Button variant="outline" className="border-border hover:bg-white/5">
+            <Button variant="outline" className="border-border hover:bg-muted">
               <Download className="mr-2 h-4 w-4" /> Download PDF
             </Button>
           </a>

@@ -3,46 +3,52 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+  Palette: paper, ink, brick. Nile green is the one supporting color.
+  Type: Newsreader (headings, prose) + Instrument Sans (UI). Code uses the system mono stack.
+*/
 @theme inline {
-  --color-background: #0A0F1C;
-  --color-foreground: #F5F5F5;
-  --color-primary: #D4A853;
-  --color-primary-foreground: #0A0F1C;
-  --color-secondary: #2DD4BF;
-  --color-secondary-foreground: #0A0F1C;
-  --color-muted: #1E293B;
-  --color-muted-foreground: #94A3B8;
-  --color-card: rgba(30, 41, 59, 0.4);
-  --color-card-foreground: #F5F5F5;
-  --color-border: rgba(148, 163, 184, 0.15);
-  
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  --font-editorial: 'Crimson Pro', serif;
+  --color-background: #F4EFE6;
+  --color-foreground: #1D1A16;
+  --color-primary: #A8432A;
+  --color-primary-foreground: #FBF8F2;
+  --color-secondary: #2F5D50;
+  --color-secondary-foreground: #FBF8F2;
+  --color-muted: #EAE3D6;
+  --color-muted-foreground: #6E655B;
+  --color-card: #FBF8F2;
+  --color-card-foreground: #1D1A16;
+  --color-border: #DDD3C2;
+  --color-ink: #1D1A16;
+  --color-paper: #F4EFE6;
+
+  --font-sans: 'Instrument Sans', system-ui, sans-serif;
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-editorial: 'Newsreader', Georgia, serif;
 }
 
 @layer base {
   :root {
-    --background: #0A0F1C;
-    --foreground: #F5F5F5;
-    --card: rgba(30, 41, 59, 0.4);
-    --card-foreground: #F5F5F5;
-    --popover: #0A0F1C;
-    --popover-foreground: #F5F5F5;
-    --primary: #D4A853;
-    --primary-foreground: #0A0F1C;
-    --secondary: #2DD4BF;
-    --secondary-foreground: #0A0F1C;
-    --muted: #1E293B;
-    --muted-foreground: #94A3B8;
-    --accent: #D4A853;
-    --accent-foreground: #0A0F1C;
-    --destructive: #ef4444;
-    --destructive-foreground: #F5F5F5;
-    --border: rgba(148, 163, 184, 0.15);
-    --input: rgba(148, 163, 184, 0.15);
-    --ring: #D4A853;
+    --background: #F4EFE6;
+    --foreground: #1D1A16;
+    --card: #FBF8F2;
+    --card-foreground: #1D1A16;
+    --popover: #FBF8F2;
+    --popover-foreground: #1D1A16;
+    --primary: #A8432A;
+    --primary-foreground: #FBF8F2;
+    --secondary: #2F5D50;
+    --secondary-foreground: #FBF8F2;
+    --muted: #EAE3D6;
+    --muted-foreground: #6E655B;
+    --accent: #EAE3D6;
+    --accent-foreground: #1D1A16;
+    --destructive: #B42318;
+    --destructive-foreground: #FBF8F2;
+    --border: #DDD3C2;
+    --input: #DDD3C2;
+    --ring: #A8432A;
     --radius: 0.5rem;
   }
 }
@@ -51,43 +57,96 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground font-sans;
+    font-feature-settings: "ss01";
   }
-  
+  ::selection {
+    background: #A8432A;
+    color: #FBF8F2;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif tracking-tight;
+    font-optical-sizing: auto;
   }
 }
 
 @layer utilities {
+  /* Kept under the old name so every page picks up the new card treatment */
   .glass-card {
-    @apply bg-card backdrop-blur-md border border-border rounded-xl transition-all duration-300;
+    @apply bg-card border border-border rounded-xl transition-all duration-300;
   }
   .glass-card:hover {
-    @apply border-primary/30 shadow-[0_0_20px_rgba(212,168,83,0.05)] -translate-y-1;
+    @apply border-primary/40 -translate-y-1;
+    box-shadow: 0 18px 40px -24px rgba(29, 26, 22, 0.35);
   }
-  
+
   .glass-panel {
-    @apply bg-[#0A0F1C]/80 backdrop-blur-lg border-b border-border;
+    @apply bg-background/85 backdrop-blur-md border-b border-border;
   }
-  
+
   /* Card visual animations */
   @keyframes bar-grow {
     from { transform: scaleX(0); }
     to { transform: scaleX(1); }
   }
   @keyframes node-pulse {
-    0%, 100% { transform: scale(1); opacity: 0.12; }
-    50% { transform: scale(1.4); opacity: 0.2; }
+    0%, 100% { transform: scale(1); opacity: 0.35; }
+    50% { transform: scale(1.4); opacity: 0.6; }
   }
   @keyframes dot-pulse {
-    0%, 100% { opacity: 0.15; }
-    50% { opacity: 0.35; }
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 0.8; }
   }
 
-  /* Ottoman/MENA specific ornaments */
-  .pattern-zellige {
-    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20.5h-2zM40 20.5V18H20v-2h20v-2H20v-2h20v-2H20V8h20V6H20V4h20V2H20V0h22v20.5h-2zM20 40v-2H0v-2h20v-2H0v-2h20v-2H0v-2h20v-2H0v-2h20v-2H0v-2h22V40h-2zM40 40v-2H20v-2h20v-2H20v-2h20v-2H20v-2h20v-2H20v-2h20v-2H20v-2h22V40h-2z' fill='%23D4A853' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+  /* Hero marquee */
+  @keyframes marquee-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes marquee-right {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+  .marquee-left { animation: marquee-left 60s linear infinite; }
+  .marquee-right { animation: marquee-right 70s linear infinite; }
+
+  /* Hero entrance. Resting state is visible; motion only runs when the visitor allows it. */
+  @keyframes hero-word {
+    from { opacity: 0; transform: translateY(0.6em); filter: blur(6px); }
+    to { opacity: 1; transform: none; filter: none; }
+  }
+  @keyframes hero-rise {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes hero-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes hero-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-word { animation: hero-word 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0s) both; }
+    .hero-rise { animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0s) both; }
+    .hero-fade { animation: hero-fade 0.9s ease-out var(--d, 0s) both; }
+    .hero-float { animation: hero-float 6s ease-in-out infinite; }
+    .hero-float-alt { animation: hero-float 7s ease-in-out -3.5s infinite reverse; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-left, .marquee-right { animation: none; }
+  }
+
+  /* Faint paper grain behind the hero */
+  .paper-grain {
+    background-image: radial-gradient(rgba(29, 26, 22, 0.06) 1px, transparent 1px);
+    background-size: 22px 22px;
   }
 }
