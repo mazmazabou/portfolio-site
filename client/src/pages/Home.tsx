@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { ArrowRight, ArrowUpRight, Award, Gamepad2, Instagram, Youtube } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Award, Gamepad2 } from "lucide-react";
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import { motion } from "framer-motion";
 import {
@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import Hero from "@/components/Hero";
 import RideOpsArchive from "@/components/RideOpsArchive";
-import { SOFTSAID_URL, SOFTSAID_APP_STORE_URL, SOFTSAID_INSTAGRAM_URL, SOFTSAID_YOUTUBE_URL } from "@/lib/site";
+import { SOFTSAID_URL, SOFTSAID_APP_STORE_URL } from "@/lib/site";
 
 // Bio approved by Mazen (Oct 2026).
 const BIO = [
@@ -207,9 +207,7 @@ export default function Home() {
                   {[
                     { href: SOFTSAID_APP_STORE_URL, label: "App Store", primary: true },
                     { href: SOFTSAID_URL, label: "softsaid.app" },
-                    { href: SOFTSAID_INSTAGRAM_URL, label: "Instagram", icon: Instagram },
-                    { href: SOFTSAID_YOUTUBE_URL, label: "YouTube", icon: Youtube },
-                  ].map(({ href, label, primary, icon: Icon }) => (
+                  ].map(({ href, label, primary }) => (
                     <a
                       key={label}
                       href={href}
@@ -219,7 +217,6 @@ export default function Home() {
                         ? "inline-flex items-center gap-1.5 rounded-full bg-foreground text-background h-9 px-4 text-xs font-medium transition-transform hover:-translate-y-0.5"
                         : "inline-flex items-center gap-1.5 rounded-full border border-border bg-card h-9 px-4 text-xs font-medium transition-colors hover:border-foreground/40"}
                     >
-                      {Icon && <Icon className="h-3.5 w-3.5" />}
                       {label}
                       <ArrowUpRight className="h-3.5 w-3.5" />
                     </a>
